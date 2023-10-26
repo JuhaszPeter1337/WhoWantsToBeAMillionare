@@ -1,0 +1,100 @@
+What is the capital city of France?,Berlin,London,Paris,Madrid,C
+Which planet is known as the "Red Planet"?,Venus,Mars,Jupiter,Saturn,B
+Who painted the famous Mona Lisa?,Vincent van Gogh,Leonardo da Vinci,Michelangelo,Pablo Picasso,B
+What is the chemical symbol for water?,O,He,H2O,S,C
+What is the largest mammal in the world?,Elephant,Blue Whale,Giraffe,Hippopotamus,B
+In which country would you find the Great Barrier Reef?,Australia,Brazil,Indonesia,Japan,A
+Who is the author of the Harry Potter book series?,J.K. Rowling,J.R.R. Tolkien,George R.R. Martin,Stephen King,A
+What is the national flower of Japan?,Rose,Lotus,Cherry Blossom,Daisy,C
+Which animal is known as the "King of the Jungle"?,Lion,Elephant,Gorilla,Tiger,A
+What is the largest organ in the human body?,Brain,Liver,Heart,Skin,D
+Which country is famous for its tulip fields?,Netherlands,Italy,France,Spain,A
+Who wrote the play "Romeo and Juliet"?,William Shakespeare,Oscar Wilde,George Bernard Shaw,Charles Dickens,A
+Which famous scientist developed the theory of relativity?,Isaac Newton,Albert Einstein,Stephen Hawking,Nikola Tesla,B
+What is the tallest mountain in the world?,Mount Kilimanjaro,Mount Everest,Mount McKinley,Mount Fuji,B
+What is the chemical symbol for gold?,G,Go,Au,Ag,C
+Which instrument is used to measure earthquakes?,Thermometer,Barometer,Seismometer,Hygrometer,C
+Who was the first person to step on the moon?,Neil Armstrong,Buzz Aldrin,Yuri Gagarin,John Glenn,A
+What is the largest continent on Earth?,North America,South America,Africa,Asia,D
+Which language is spoken in Brazil?,Portuguese,Spanish,Italian,French,A
+What is the chemical symbol for oxygen?,O,N,Ox,NO,A
+Who painted the ceiling of the Sistine Chapel?,Vincent van Gogh,Leonardo da Vinci,Michelangelo,Pablo Picasso,C
+What is the largest ocean on Earth?,Atlantic Ocean,Indian Ocean,Arctic Ocean,Pacific Ocean,D
+Who is the author of the play "Hamlet"?,William Shakespeare,Oscar Wilde,George Bernard Shaw,Charles Dickens,A
+Which gas do plants absorb from the atmosphere during photosynthesis?,Oxygen,Carbon Dioxide,Hydrogen,Nitrogen,B
+What is the largest desert in the world?,Gobi Desert,Sahara Desert,Kalahari Desert,Atacama Desert,B
+Who is the main protagonist in the "Lord of the Rings" trilogy?,Frodo Baggins,Gandalf,Aragorn,Sauron,A
+What is the currency of Japan?,Yuan,Yen,Euro,Dollar,B
+Which river is the longest in the world?,Amazon,Yangtze,Mississippi,Nile,D
+Who wrote the famous novel "Pride and Prejudice"?,Jane Austen,Charlotte Brontë,Emily Dickinson,Mary Shelley,A
+What is the chemical symbol for carbon?,C,Co,Ca,Cl,A
+Which famous scientist formulated the theory of gravity?,Isaac Newton,Albert Einstein,Stephen Hawking,Nikola Tesla,A
+What is the largest animal in the world?,Elephant,Blue Whale,Giraffe,Hippopotamus,B
+In which country would you find the Leaning Tower of Pisa?,Italy,Spain,France,Greece,A
+Who is the creator of the "Mona Lisa" painting?,Vincent van Gogh,Leonardo da Vinci,Michelangelo,Pablo Picasso,B
+What is the capital city of the United Kingdom?,Berlin,London,Paris,Madrid,B
+Which planet is known as the "Giant of our Solar System"?,Venus,Mars,Jupiter,Saturn,C
+Who wrote the play "Macbeth"?,William Shakespeare,Oscar Wilde,George Bernard Shaw,Charles Dickens,A
+What is the national flower of India?,Rose,Lotus,Cherry Blossom,Daisy,B
+Which animal is known as the "King of the Beasts"?,Lion,Elephant,Gorilla,Tiger,A
+What is the largest internal organ in the human body?,Brain,Liver,Heart,Kidney,B
+Which country is famous for its vineyards and wine production?,Netherlands,Italy,France,Spain,C
+Who is the author of the "A Song of Ice and Fire" book series?,J.K. Rowling,J.R.R. Tolkien,George R.R. Martin,Stephen King,C
+What is the national flower of England?,Rose,Lotus,Cherry Blossom,Daisy,A
+Which animal is often associated with wisdom?,Owl,Fox,Raven,Eagle,A
+What is the chemical symbol for silver?,S,Au,Ag,P,C
+Which instrument is used to measure atmospheric pressure?,Thermometer,Barometer,Seismometer,Hygrometer,B
+Who was the first woman to win a Nobel Prize?,Marie Curie,Rosalind Franklin,Dorothy Hodgkin,Barbara McClintock,A
+What is the largest island in the world?,Greenland,Australia,Borneo,Madagascar,A
+Which language is spoken in Mexico?,Portuguese,Spanish,Italian,French,B
+What is the chemical symbol for helium?,H,He,Hy,C,B
+Who painted the famous "The Starry Night"?,Vincent van Gogh,Leonardo da Vinci,Michelangelo,Pablo Picasso,A
+What is the largest sea on Earth?,Mediterranean Sea,Caribbean Sea,Arabian Sea,Philippine Sea,D
+Who is the author of the novel "1984"?,George Orwell,Aldous Huxley,Ray Bradbury,Ernest Hemingway,A
+What is the largest moon in our Solar System?,Phobos,Titan,Ganymede,Callisto,C
+What is the currency of China?,Yuan,Yen,Euro,Dollar,A
+Which river flows through the Grand Canyon?,Colorado River,Mississippi River,Mekong River,Yellow River,A
+Who wrote the famous play "Romeo and Juliet"?,William Shakespeare,Oscar Wilde,George Bernard Shaw,Charles Dickens,A
+Which gas is essential for photosynthesis to occur in plants?,Oxygen,Carbon Dioxide,Hydrogen,Nitrogen,B
+What is the largest forest in the world?,Amazon Rainforest,Congo Rainforest,Boreal Forest,Sundarbans,B
+Who is the main antagonist in the "Harry Potter" series?,Voldemort,Draco Malfoy,Severus Snape,Hagrid,A
+What is the currency of the United States?,Yuan,Yen,Euro,Dollar,D
+Which river is the longest in South America?,Amazon,Yangtze,Mississippi,Nile,A
+Who wrote the famous play "Hamlet"?,William Shakespeare,Oscar Wilde,George Bernard Shaw,Charles Dickens,A
+What is the largest planet in our Solar System?,Venus,Mars,Jupiter,Saturn,C
+What is the capital city of Spain?,Berlin,London,Paris,Madrid,D
+Which planet is known as the "Blue Planet"?,Venus,Mars,Jupiter,Earth,D
+Who painted the famous "The Last Supper"?,Vincent van Gogh,Leonardo da Vinci,Michelangelo,Pablo Picasso,B
+What is the national flower of France?,Rose,Lotus,Cherry Blossom,Lily,D
+Which animal is known as the "Ship of the Desert"?,Lion,Elephant,Camel,Tiger,C
+What is the largest gland in the human body?,Brain,Liver,Heart,Kidney,B
+Which country is famous for its cheese production?,Netherlands,Italy,France,Spain,C
+Who is the author of the "Harry Potter" book series?,J.K. Rowling,J.R.R. Tolkien,George R.R. Martin,Stephen King,A
+What is the national flower of Germany?,Rose,Lotus,Cornflower,Daisy,C
+Which animal is often associated with intelligence and problem-solving?,Owl,Fox,Dolphin,Elephant,D
+What is the chemical symbol for copper?,C,Co,Ca,Cu,A
+Which instrument is used to measure wind speed?,Thermometer,Barometer,Anemometer,Hygrometer,C
+Who was the first person to reach the South Pole?,Neil Armstrong,Edmund Hillary,Amelia Earhart,Roald Amundsen,D
+What is the largest lake in the world by volume?,Caspian Sea,Lake Baikal,Lake Superior,Lake Victoria,B
+Which language is spoken in Spain?,Portuguese,Spanish,Italian,French,B
+What is the chemical symbol for nitrogen?,H,N,O,Ni,B
+Who painted the famous "The Persistence of Memory"?,Vincent van Gogh,Leonardo da Vinci,Salvador Dalí,Pablo Picasso,C
+What is the deepest point on Earth?,Mariana Trench,Sargasso Sea,Challenger Deep,Puerto Rico Trench,A
+Who is the author of the play "Othello"?,William Shakespeare,Oscar Wilde,George Bernard Shaw,Charles Dickens,A
+What is the currency of Canada?,Yuan,Yen,Euro,Canadian Dollar,D
+Which river is the longest in Asia?,Amazon,Yangtze,Mississippi,Nile,B
+Who wrote the famous novel "To Kill a Mockingbird"?,Harper Lee,Jane Austen,Mark Twain,F. Scott Fitzgerald,A
+What is the largest canyon in the world?,Grand Canyon,Great Rift Valley,Colca Canyon,Barranca del Cobre,A
+What is the chemical symbol for potassium?,P,K,Po,K2,B
+Which instrument is used to measure temperature?,Thermometer,Barometer,Seismometer,Hygrometer,A
+Who was the first woman to fly solo across the Atlantic Ocean?,Marie Curie,Rosalind Franklin,Amelia Earhart,Barbara McClintock,C
+What is the largest island country in the world?,Greenland,Australia,Indonesia,Madagascar,C
+Which language is spoken in France?,Portuguese,Spanish,Italian,French,D
+What is the chemical symbol for iron?,S,I,Fe,In,C
+Who painted the famous "The Creation of Adam"?,Vincent van Gogh,Leonardo da Vinci,Michelangelo,Pablo Picasso,C
+What is the capital city of Germany?,Berlin,London,Paris,Madrid,A
+Which planet is known as the "Ringed Planet"?,Venus,Mars,Jupiter,Saturn,D
+Who wrote the play "Julius Caesar"?,William Shakespeare,Oscar Wilde,George Bernard Shaw,Charles Dickens,A
+What is the national flower of Russia?,Rose,Lotus,Cherry Blossom,Chamomile,D
+Which animal is known as the "King of the Skies"?,Owl,Eagle,Hawk,Falcon,B
+What is the chemical symbol for uranium?,U,O,Un,U,D

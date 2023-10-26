@@ -1,4 +1,7 @@
 import pygame
+import random
+import time
+from file import *
 
 pygame.init()
 
@@ -67,12 +70,15 @@ def main():
         screen.blit(PAF, (890, 530))
         screen.blit(ATA, (1000, 530))
 
+        length = len(quiz)
+        rnd = random.randint(0, length-1)
+
         objects = [ 
-            Button(100, 610, 1000, 130, WHITE, "question", "Who is the author of the Harry Potter book series?"),
-            Button(100, 770, 450, 80, WHITE, "option","A, " + "J.K. Rowling"),
-            Button(650, 770, 450, 80, WHITE, "option","B, " + "J.R.R. Tolkien"),
-            Button(100, 880, 450, 80, WHITE, "option","C, " + "George R.R. Martin"),
-            Button(650, 880, 450, 80, WHITE, "option","D, " + "Stephen King")
+            Button(100, 610, 1000, 130, WHITE, "question", quiz[rnd].question),
+            Button(100, 770, 450, 80, WHITE, "option","A, " + quiz[rnd].option_A),
+            Button(650, 770, 450, 80, WHITE, "option","B, " + quiz[rnd].option_B),
+            Button(100, 880, 450, 80, WHITE, "option","C, " + quiz[rnd].option_C),
+            Button(650, 880, 450, 80, WHITE, "option","D, " + quiz[rnd].option_D)
         ]
 
         for obj in objects:
@@ -80,7 +86,13 @@ def main():
 
         pygame.display.update()
 
+        answered = False
+        while(not answered):
+            time.sleep(3)
+            break
+
     pygame.quit()
 
 if __name__ == "__main__":
+    read_from_file()
     main()
