@@ -22,6 +22,10 @@ RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
 
+money = [100, 200, 500, 700, 1000,
+        2000, 4000, 8000, 16000, 32000,
+        64000, 125000, 250000, 500000, 1000000]
+
 font = pygame.font.Font('freesansbold.ttf', 26) 
 
 class Button():
@@ -43,7 +47,7 @@ class Button():
 
         if self.text != "":
             if self.type == "question":
-                font = pygame.font.SysFont('segoeuisemibold', 32)
+                font = pygame.font.SysFont('segoeuisemibold', 30)
                 text = font.render(self.text, 1, WHITE)
                 screen.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
             else:    
@@ -53,6 +57,10 @@ class Button():
 
 def main():
     running = True
+
+    question_counter = 1
+    correct_answers = 0
+    my_money = 0
 
     screen.blit(BACKGROUND, (0, 0))
 
@@ -73,7 +81,8 @@ def main():
         length = len(quiz)
         rnd = random.randint(0, length-1)
 
-        objects = [ 
+        objects = [
+            Button(435, 533, 330, 75, WHITE, "number", f"Question {question_counter} for {money[correct_answers]}$"),
             Button(100, 610, 1000, 130, WHITE, "question", quiz[rnd].question),
             Button(100, 770, 450, 80, WHITE, "option","A, " + quiz[rnd].option_A),
             Button(650, 770, 450, 80, WHITE, "option","B, " + quiz[rnd].option_B),
@@ -88,8 +97,14 @@ def main():
 
         answered = False
         while(not answered):
-            time.sleep(3)
-            break
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    question_counter = question_counter + 1 if question_counter < 15 else 1
+                    correct_answers = correct_answers + 1 if correct_answers < 14 else 0
+                    answered = True
+
+                elif event.type == pygame.QUIT:
+                    pygame.quit()
 
     pygame.quit()
 
