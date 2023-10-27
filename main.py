@@ -21,6 +21,8 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
+GREEN = (0, 255, 0)
+ORANGE = (255, 165, 0)
 
 money = [100, 200, 500, 700, 1000,
         2000, 4000, 8000, 16000, 32000,
@@ -38,10 +40,10 @@ class Button():
         self.outline = outline
         self.type = type
 
-    def draw(self, screen, outline = None):
+    def draw(self, screen, outline = None, answered = None, correct = None, incorrect = None):
 
         if self.outline:
-            pygame.draw.rect(screen, self.outline, (self.x - 2, self.y - 2, self.width + 4, self.height + 4), 0)
+            pygame.draw.rect(screen, self.outline, (self.x - 4, self.y - 4, self.width + 8, self.height + 8), 0)
 
         pygame.draw.rect(screen, BLACK, (self.x, self.y, self.width, self.height), 0)
 
@@ -52,8 +54,24 @@ class Button():
                 screen.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
             else:    
                 font = pygame.font.SysFont('segoeuisemibold', 26)
-                text = font.render(self.text, 1, WHITE)
+                if answered:
+                    text = font.render(self.text, 1, ORANGE)
+                elif correct:
+                    text = font.render(self.text, 1, GREEN)
+                elif incorrect:
+                    text = font.render(self.text, 1, RED)
+                else:
+                    text = font.render(self.text, 1, WHITE)
                 screen.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
+
+    def answer(self):
+        self.outline = ORANGE
+
+    def correct(self):
+        self.outline = GREEN
+
+    def incorrect(self):
+        self.outline = RED
 
 def main():
     running = True
@@ -101,6 +119,18 @@ def main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     question_counter = question_counter + 1 if question_counter < 15 else 1
                     correct_answers = correct_answers + 1 if correct_answers < 14 else 0
+                    objects[2].answer()
+                    objects[2].draw(screen, answered=True)
+                    pygame.display.update()
+                    time.sleep(3)
+                    objects[2].correct()
+                    objects[2].draw(screen, correct=True)
+                    pygame.display.update()
+                    time.sleep(3)
+                    objects[2].incorrect()
+                    objects[2].draw(screen, incorrect=True)
+                    pygame.display.update()
+                    time.sleep(3)
                     answered = True
 
                 elif event.type == pygame.QUIT:
