@@ -26,7 +26,7 @@ What is the largest desert in the world?,Gobi Desert,Sahara Desert,Kalahari Dese
 Who is the main protagonist in the "Lord of the Rings" trilogy?,Frodo Baggins,Gandalf,Aragorn,Sauron,A
 What is the currency of Japan?,Yuan,Yen,Euro,Dollar,B
 Which river is the longest in the world?,Amazon,Yangtze,Mississippi,Nile,D
-Who wrote the famous novel "Pride and Prejudice"?,Jane Austen,Charlotte Brontë,Emily Dickinson,Mary Shelley,A
+Who wrote the famous novel "Pride and Prejudice"?,Jane Austen,Charlotte Bronte,Emily Dickinson,Mary Shelley,A
 What is the chemical symbol for carbon?,C,Co,Ca,Cl,A
 Which famous scientist formulated the theory of gravity?,Isaac Newton,Albert Einstein,Stephen Hawking,Nikola Tesla,A
 What is the largest animal in the world?,Elephant,Blue Whale,Giraffe,Hippopotamus,B
