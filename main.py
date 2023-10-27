@@ -71,7 +71,7 @@ class Button():
 
         if self.text != "": 
             font = pygame.font.SysFont('segoeuisemibold', 26)
-            if answered and self.pushed and not correct and not incorrect:
+            if (answered and not self.pushed and not correct and not incorrect) or (answered and self.pushed and not correct and not incorrect):
                 text = font.render(self.text, 1, ORANGE)
             elif answered and self.pushed and correct:
                 text = font.render(self.text, 1, GREEN)
@@ -101,6 +101,18 @@ class Button():
             if self.outline == WHITE:
                 self.answer()
                 self.pushed = True
+
+def find_correct_answer(answer):
+    number = None
+    if answer == "A":
+        number = 2
+    elif answer == "B":
+        number = 3
+    elif answer == "C":
+        number = 4
+    else:
+        number = 5
+    return number
 
 def gameover():
     pygame.quit()
@@ -164,8 +176,11 @@ def main():
                                 else:
                                     button.incorrect()
                                     button.draw(screen, answered=True, incorrect=True)
+                                    number = find_correct_answer(quiz[rnd].correct_answer)
+                                    objects[number].outline = ORANGE
+                                    objects[number].draw(screen, answered=True, incorrect=False)
                                     pygame.display.update()
-                                    pygame.time.delay(3000)
+                                    pygame.time.delay(5000)
                                     gameover()
 
                 elif event.type == pygame.QUIT:
