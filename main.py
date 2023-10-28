@@ -1,151 +1,23 @@
 import sys
 import pygame
 import random
-import math
 from file import *
+from constants import *
+from rectangular import *
+from ellipse import *
+from button import *
 
 pygame.init()
-
-WIDTH, HEIGHT = 1200, 1000
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 pygame.display.set_caption("Who wants to be a millionare?")
 
-BACKGROUND = pygame.image.load("bg.jpg")
-
-FIFTYFIFTY =  pygame.transform.scale(pygame.image.load("Classic5050.webp"), (97,72))
-USED_FIFTYFIFTY = pygame.transform.scale(pygame.image.load("Classic5050.webp"), (97,72))
-PAF = pygame.transform.scale(pygame.image.load("ClassicPAF.webp"), (97,72))
-USED_PAF = pygame.transform.scale(pygame.image.load("ClassicPAF.webp"), (97,72))
-ATA = pygame.transform.scale(pygame.image.load("ClassicATA.webp"), (97,72))
-USED_ATA = pygame.transform.scale(pygame.image.load("ClassicATA.webp"), (97,72))
-
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-BLUE = (0,128,255)
-BLACK = (0, 0, 0)
-GREEN = (0, 255, 0)
-ORANGE = (255, 165, 0)
-
 money = [100, 200, 500, 700, 1000,
         2000, 4000, 8000, 16000, 32000,
         64000, 125000, 250000, 500000, 1000000]
 
-audience, phone, fifty = True, True, True
-
 font = pygame.font.Font('freesansbold.ttf', 26)
-
-class Rectangular():
-    def __init__(self, x, y, width, height, outline, text = "") -> None:
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.text = text
-        self.outline = outline
-
-    def draw(self, screen, outline = None):
-
-        if self.outline:
-            pygame.draw.rect(screen, self.outline, (self.x - 4, self.y - 4, self.width + 8, self.height + 8), 0)
-
-        pygame.draw.rect(screen, BLACK, (self.x, self.y, self.width, self.height), 0)
-
-        if self.text != "":
-            font = pygame.font.SysFont('segoeuisemibold', 30)
-            text = font.render(self.text, 1, WHITE)
-            screen.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
-
-class Ellipse():
-    def __init__(self, x, y, width, height, type) -> None:
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.type = type
-
-    def draw(self, screen):
-        pygame.draw.ellipse(screen, BLUE, (self.x, self.y, self.width, self.height))
-
-    #(x - h)^2 / a^2 + (y - k)^2 / b^2 <= 1
-    def isOver(self, pos):
-        point_x, point_y = pos[0], pos[1]
-        ellipse_center_x, ellipse_center_y = self.x + self.width / 2, self.y + self.height / 2
-        half_width, half_height = self.width / 2, self.height / 2
-        p = ((math.pow((point_x - ellipse_center_x), 2) / math.pow(half_width, 2)) + (math.pow((point_y - ellipse_center_y), 2) / math.pow(half_height, 2)))
-        return p
-
-    def update(self):
-        global fifty, phone, audience
-        collision = self.isOver(pygame.mouse.get_pos())
-        if collision <= 1:
-            if self.type == "fifty" and fifty:
-                fifty = False
-                pygame.draw.line(screen, RED, (779, 535), (879, 595), width=6)
-                pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
-                pygame.display.update()
-            elif self.type == "phone" and phone:
-                phone = False
-                pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
-                pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
-                pygame.display.update()
-            elif self.type == "audience" and audience:
-                audience = False
-                pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
-                pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
-                pygame.display.update()
-
-class Button():
-    def __init__(self, x, y, width, height, outline, type, text = "", pushed = False):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.text = text
-        self.outline = outline
-        self.type = type
-        self.pushed = pushed
-
-    def draw(self, screen, outline = None, answered = False, correct = False, incorrect = False):
-
-        if self.outline:
-            pygame.draw.rect(screen, self.outline, (self.x - 4, self.y - 4, self.width + 8, self.height + 8), 0)
-
-        pygame.draw.rect(screen, BLACK, (self.x, self.y, self.width, self.height), 0)
-
-        if self.text != "": 
-            font = pygame.font.SysFont('segoeuisemibold', 26)
-            if (answered and not self.pushed and not correct and not incorrect) or (answered and self.pushed and not correct and not incorrect):
-                text = font.render(self.text, 1, ORANGE)
-            elif answered and self.pushed and correct:
-                text = font.render(self.text, 1, GREEN)
-            elif answered and self.pushed and incorrect:
-                text = font.render(self.text, 1, RED)
-            else:
-                text = font.render(self.text, 1, WHITE)
-            screen.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
-
-    def isOver(self, pos):
-        if pos[0] > self.x and pos[0] < self.x + self.width:
-            if pos[1] > self.y and pos[1] < self.y + self.height:
-                return True
-        return False
-
-    def answer(self):
-        self.outline = ORANGE
-
-    def correct(self):
-        self.outline = GREEN
-
-    def incorrect(self):
-        self.outline = RED
-
-    def update(self):
-        if self.isOver(pygame.mouse.get_pos()):
-            if self.outline == WHITE:
-                self.answer()
-                self.pushed = True
 
 def find_correct_answer(answer):
     number = None
@@ -218,7 +90,7 @@ def main():
                             pygame.display.update()
                             pygame.time.delay(3000)
                         if type(button) == Ellipse:
-                            button.update()
+                            button.update(screen)
                     
                     for button in objects:
                         if type(button) == Button:

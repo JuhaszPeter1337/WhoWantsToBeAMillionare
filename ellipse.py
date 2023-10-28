@@ -1,0 +1,44 @@
+import pygame
+import math
+from constants import *
+
+audience, phone, fifty = True, True, True
+
+class Ellipse():
+    def __init__(self, x, y, width, height, type) -> None:
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.type = type
+
+    def draw(self, screen):
+        pygame.draw.ellipse(screen, BLUE, (self.x, self.y, self.width, self.height))
+
+    #(x - h)^2 / a^2 + (y - k)^2 / b^2 <= 1
+    def isOver(self, pos):
+        point_x, point_y = pos[0], pos[1]
+        ellipse_center_x, ellipse_center_y = self.x + self.width / 2, self.y + self.height / 2
+        half_width, half_height = self.width / 2, self.height / 2
+        p = ((math.pow((point_x - ellipse_center_x), 2) / math.pow(half_width, 2)) + (math.pow((point_y - ellipse_center_y), 2) / math.pow(half_height, 2)))
+        return p
+
+    def update(self, screen):
+        global fifty, phone, audience
+        collision = self.isOver(pygame.mouse.get_pos())
+        if collision <= 1:
+            if self.type == "fifty" and fifty:
+                fifty = False
+                pygame.draw.line(screen, RED, (779, 535), (879, 595), width=6)
+                pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
+                pygame.display.update()
+            elif self.type == "phone" and phone:
+                phone = False
+                pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
+                pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
+                pygame.display.update()
+            elif self.type == "audience" and audience:
+                audience = False
+                pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
+                pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
+                pygame.display.update()
