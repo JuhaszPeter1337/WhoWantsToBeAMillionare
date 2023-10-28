@@ -1,16 +1,14 @@
 import pygame
 from constants import *
 from main import gameover
+from shape import *
 
-class Button():
+class Button(Shape):
     def __init__(self, x, y, width, height, outline, type, text = "", pushed = False):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.text = text
+        super().__init__(x, y, width, height)
         self.outline = outline
         self.type = type
+        self.text = text
         self.pushed = pushed
 
     def draw(self, screen, outline = None, answered = False, correct = False, incorrect = False):

@@ -1,15 +1,13 @@
 import pygame
 import math
 from constants import *
+from shape import *
 
 audience, phone, fifty = True, True, True
 
-class Ellipse():
+class Ellipse(Shape):
     def __init__(self, x, y, width, height, type) -> None:
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
+        super().__init__(x, y, width, height)
         self.type = type
 
     def draw(self, screen):

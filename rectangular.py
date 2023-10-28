@@ -1,14 +1,12 @@
 import pygame
 from constants import *
+from shape import *
 
-class Rectangular():
+class Rectangular(Shape):
     def __init__(self, x, y, width, height, outline, text = "") -> None:
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.text = text
+        super().__init__(x, y, width, height)
         self.outline = outline
+        self.text = text
 
     def draw(self, screen):
 
