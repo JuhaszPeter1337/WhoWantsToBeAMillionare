@@ -1,6 +1,6 @@
 from question import *
 
-questions = "questions.txt"
+questions = "questions/questions.txt"
 
 quiz = []
 
