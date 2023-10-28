@@ -14,9 +14,12 @@ pygame.display.set_caption("Who wants to be a millionare?")
 
 BACKGROUND = pygame.image.load("bg.jpg")
 
-Fiftyfifty =  pygame.transform.scale(pygame.image.load("Classic5050.webp"), (97,72))
+FIFTYFIFTY =  pygame.transform.scale(pygame.image.load("Classic5050.webp"), (97,72))
+USED_FIFTYFIFTY = pygame.transform.scale(pygame.image.load("Classic5050.webp"), (97,72))
 PAF = pygame.transform.scale(pygame.image.load("ClassicPAF.webp"), (97,72))
+USED_PAF = pygame.transform.scale(pygame.image.load("ClassicPAF.webp"), (97,72))
 ATA = pygame.transform.scale(pygame.image.load("ClassicATA.webp"), (97,72))
+USED_ATA = pygame.transform.scale(pygame.image.load("ClassicATA.webp"), (97,72))
 
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
@@ -78,14 +81,20 @@ class Ellipse():
         collision = self.isOver(pygame.mouse.get_pos())
         if collision <= 1:
             if self.type == "fifty" and fifty:
-                print("Collision")
                 fifty = False
-            elif self.type == "audience" and audience:
-                print("Collision")
-                audience = False
+                pygame.draw.line(screen, RED, (779, 535), (879, 595), width=6)
+                pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
+                pygame.display.update()
             elif self.type == "phone" and phone:
-                print("Collision")
                 phone = False
+                pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
+                pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
+                pygame.display.update()
+            elif self.type == "audience" and audience:
+                audience = False
+                pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
+                pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
+                pygame.display.update()
 
 class Button():
     def __init__(self, x, y, width, height, outline, type, text = "", pushed = False):
@@ -182,9 +191,18 @@ def main():
         for obj in objects:
             obj.draw(screen)
 
-        screen.blit(Fiftyfifty, (780, 530))
+        screen.blit(FIFTYFIFTY, (780, 530))
+        if not fifty:
+            pygame.draw.line(screen, RED, (779, 535), (877, 600), width=6)
+            pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
         screen.blit(PAF, (890, 530))
+        if not phone:
+            pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
+            pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
         screen.blit(ATA, (1000, 530))
+        if not audience:
+            pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
+            pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
 
         pygame.display.update()
 
