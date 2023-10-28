@@ -1,6 +1,7 @@
 import sys
 import pygame
 import random
+import math
 from file import *
 
 pygame.init()
@@ -19,7 +20,7 @@ ATA = pygame.transform.scale(pygame.image.load("ClassicATA.webp"), (97,72))
 
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+BLUE = (0,128,255)
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 ORANGE = (255, 165, 0)
@@ -28,7 +29,9 @@ money = [100, 200, 500, 700, 1000,
         2000, 4000, 8000, 16000, 32000,
         64000, 125000, 250000, 500000, 1000000]
 
-font = pygame.font.Font('freesansbold.ttf', 26) 
+audience, phone, fifty = True, True, True
+
+font = pygame.font.Font('freesansbold.ttf', 26)
 
 class Rectangular():
     def __init__(self, x, y, width, height, outline, text = "") -> None:
@@ -50,6 +53,39 @@ class Rectangular():
             font = pygame.font.SysFont('segoeuisemibold', 30)
             text = font.render(self.text, 1, WHITE)
             screen.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
+
+class Ellipse():
+    def __init__(self, x, y, width, height, type) -> None:
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.type = type
+
+    def draw(self, screen):
+        pygame.draw.ellipse(screen, BLUE, (self.x, self.y, self.width, self.height))
+
+    #(x - h)^2 / a^2 + (y - k)^2 / b^2 <= 1
+    def isOver(self, pos):
+        point_x, point_y = pos[0], pos[1]
+        ellipse_center_x, ellipse_center_y = self.x + self.width / 2, self.y + self.height / 2
+        half_width, half_height = self.width / 2, self.height / 2
+        p = ((math.pow((point_x - ellipse_center_x), 2) / math.pow(half_width, 2)) + (math.pow((point_y - ellipse_center_y), 2) / math.pow(half_height, 2)))
+        return p
+
+    def update(self):
+        global fifty, phone, audience
+        collision = self.isOver(pygame.mouse.get_pos())
+        if collision <= 1:
+            if self.type == "fifty" and fifty:
+                print("Collision")
+                fifty = False
+            elif self.type == "audience" and audience:
+                print("Collision")
+                audience = False
+            elif self.type == "phone" and phone:
+                print("Collision")
+                phone = False
 
 class Button():
     def __init__(self, x, y, width, height, outline, type, text = "", pushed = False):
@@ -128,10 +164,6 @@ def main():
     screen.blit(BACKGROUND, (0, 0))
 
     while running:
-        screen.blit(Fiftyfifty, (780, 530))
-        screen.blit(PAF, (890, 530))
-        screen.blit(ATA, (1000, 530))
-
         length = len(quiz)
         rnd = random.randint(0, length-1)
 
@@ -141,11 +173,18 @@ def main():
             Button(100, 770, 450, 80, WHITE, "A","A, " + quiz[rnd].option_A),
             Button(650, 770, 450, 80, WHITE, "B","B, " + quiz[rnd].option_B),
             Button(100, 880, 450, 80, WHITE, "C","C, " + quiz[rnd].option_C),
-            Button(650, 880, 450, 80, WHITE, "D","D, " + quiz[rnd].option_D)
+            Button(650, 880, 450, 80, WHITE, "D","D, " + quiz[rnd].option_D),
+            Ellipse(779, 535, 100, 65, "fifty"),
+            Ellipse(889, 535, 100, 65, "phone"),
+            Ellipse(999, 535, 100, 65, "audience")
         ]
 
         for obj in objects:
             obj.draw(screen)
+
+        screen.blit(Fiftyfifty, (780, 530))
+        screen.blit(PAF, (890, 530))
+        screen.blit(ATA, (1000, 530))
 
         pygame.display.update()
 
@@ -160,6 +199,8 @@ def main():
                             button.draw(screen, answered=True)
                             pygame.display.update()
                             pygame.time.delay(3000)
+                        if type(button) == Ellipse:
+                            button.update()
                     
                     for button in objects:
                         if type(button) == Button:
