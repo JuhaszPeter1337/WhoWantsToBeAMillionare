@@ -86,22 +86,22 @@ def main():
         while(not answered):
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    for button in objects:
-                        if type(button) == Button:
-                            button.update()
-                        if type(button) == Button and button.pushed:
-                            button.draw(screen, answered=True)
+                    for obj in objects:
+                        if type(obj) == Button:
+                            obj.update()
+                        if type(obj) == Button and obj.pushed:
+                            obj.draw(screen, answered=True)
                             pygame.display.update()
                             pygame.time.delay(3000)
-                        if type(button) == ellipse.Ellipse:
-                            button.update(screen)
+                        if type(obj) == ellipse.Ellipse:
+                            obj.update(screen)
                     
-                    for button in objects:
-                        if type(button) == Button:
-                            if button.pushed:
-                                if button.type == quiz[rnd].correct_answer:
-                                    button.correct()
-                                    button.draw(screen, answered=True, correct=True)
+                    for obj in objects:
+                        if type(obj) == Button:
+                            if obj.pushed:
+                                if obj.type == quiz[rnd].correct_answer:
+                                    obj.correct()
+                                    obj.draw(screen, answered=True, correct=True)
                                     pygame.display.update()
                                     pygame.time.delay(3000)
                                     question_counter = question_counter + 1 if question_counter < 15 else 1
@@ -109,8 +109,8 @@ def main():
                                     quiz.pop(rnd)
                                     answered = True
                                 else:
-                                    button.incorrect()
-                                    button.draw(screen, answered=True, incorrect=True)
+                                    obj.incorrect()
+                                    obj.draw(screen, answered=True, incorrect=True)
                                     number = find_correct_answer(quiz[rnd].correct_answer)
                                     objects[number].outline = ORANGE
                                     objects[number].draw(screen, answered=True, incorrect=False)
