@@ -56,6 +56,7 @@ def main():
             Button(650, 770, 450, 80, WHITE, "B","B, " + quiz[rnd].option_B),
             Button(100, 880, 450, 80, WHITE, "C","C, " + quiz[rnd].option_C),
             Button(650, 880, 450, 80, WHITE, "D","D, " + quiz[rnd].option_D),
+            Button(105, 535, 140, 60, BLUE, "stop"),
             Ellipse(779, 535, 100, 65, "fifty"),
             Ellipse(889, 535, 100, 65, "phone"),
             Ellipse(999, 535, 100, 65, "audience")
@@ -63,6 +64,8 @@ def main():
 
         for obj in objects:
             obj.draw(screen)
+
+        screen.blit(STOP, (100, 530))
 
         screen.blit(FIFTYFIFTY, (780, 530))
         if not ellipse.fifty:

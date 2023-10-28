@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from main import gameover
 
 class Button():
     def __init__(self, x, y, width, height, outline, type, text = "", pushed = False):
@@ -48,6 +49,10 @@ class Button():
 
     def update(self):
         if self.isOver(pygame.mouse.get_pos()):
-            if self.outline == WHITE:
-                self.answer()
-                self.pushed = True
+            if self.type != "stop":
+                if self.outline == WHITE:
+                    self.answer()
+                    self.pushed = True
+            else:
+                print("Game over!")
+                gameover()
