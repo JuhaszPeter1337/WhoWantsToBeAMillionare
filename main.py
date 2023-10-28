@@ -33,6 +33,11 @@ def find_correct_answer(answer):
     return number
 
 def gameover():
+    screen.blit(BACKGROUND, (0, 0))
+    end_screen = Rectangular(200, 600, 800, 300, WHITE, "Game over, have a great day, bye!")
+    end_screen.draw(screen)
+    pygame.display.update()
+    pygame.time.delay(5000)
     pygame.quit()
     sys.exit()
 
