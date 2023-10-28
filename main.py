@@ -4,6 +4,7 @@ import random
 from file import *
 from constants import *
 from rectangular import *
+import ellipse
 from ellipse import *
 from button import *
 
@@ -64,15 +65,15 @@ def main():
             obj.draw(screen)
 
         screen.blit(FIFTYFIFTY, (780, 530))
-        if not fifty:
+        if not ellipse.fifty:
             pygame.draw.line(screen, RED, (779, 535), (877, 600), width=6)
             pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
         screen.blit(PAF, (890, 530))
-        if not phone:
+        if not ellipse.phone:
             pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
             pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
         screen.blit(ATA, (1000, 530))
-        if not audience:
+        if not ellipse.audience:
             pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
             pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
 
@@ -89,7 +90,7 @@ def main():
                             button.draw(screen, answered=True)
                             pygame.display.update()
                             pygame.time.delay(3000)
-                        if type(button) == Ellipse:
+                        if type(button) == ellipse.Ellipse:
                             button.update(screen)
                     
                     for button in objects:
