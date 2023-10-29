@@ -2,6 +2,7 @@ import pygame
 import sys
 from rectangular import *
 from constants import *
+import button
 
 pygame.font.init()
 
@@ -156,7 +157,39 @@ def winner(screen, money):
     pygame.quit()
     sys.exit()
 
-def loading_screen(screen):
+def menu(screen):
+    running = True
+
     screen.blit(BACKGROUND, (0, 0))
-    pygame.display.update()
-    pygame.time.delay(5000)
+
+    while running:
+        objects = [
+            button.Button(415, 550, 400, 115, WHITE, "play","PLAY"),
+            button.Button(415, 700, 400, 115, WHITE, "description","DESCRIPTION"),
+            button.Button(415, 855, 400, 115, WHITE, "quit","QUIT")
+        ]
+
+        for obj in objects:
+            obj.draw(screen)
+
+        pygame.display.update()
+
+        pushed = False
+        while(not pushed):
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    for obj in objects:
+                        value = obj.isOver(pygame.mouse.get_pos())
+                        if (obj.type == "play"):
+                            if (value):
+                                pushed = True
+                                running = False
+                        elif (value and obj.type == "quit"):
+                            pygame.quit()
+                            sys.exit()
+
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+    pygame.event.pump()
