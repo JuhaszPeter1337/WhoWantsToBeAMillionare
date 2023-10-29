@@ -40,6 +40,9 @@ class Ellipse(Shape):
                 pygame.display.update()
             elif self.type == "audience" and audience:
                 audience = False
+                values = use_audience(question)
+                evaulate = evaluate_audience(question, values)
+                diagram(evaulate)
                 pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
                 pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
                 pygame.display.update()
