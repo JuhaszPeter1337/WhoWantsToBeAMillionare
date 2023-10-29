@@ -96,13 +96,8 @@ def gameover(money):
 
 def start():
     screen.blit(MAN, (0, 0))
-    start_screen = Rectangular(600, 20, 580, 500, WHITE)
-    start_screen.draw(screen)
+
     text = "Ladies and Gentlemen!"
-    first=font2.render(text, False, WHITE, BLACK)
-    screen.blit(first, (730, 40))
-    pygame.display.update()
-    pygame.time.delay(3000)
     text1 = 'Welcome to a new round of "Who wants to'
     text2 = 'be a millionare!". We have a new candidate'
     text3 = "here. Welcome! Everyone, a big round of"
@@ -110,6 +105,11 @@ def start():
     text5 = "*applause*"
     text6 = "The game is about to begin in 5 seconds."
     text7 = "Good luck!"
+
+    start_screen = Rectangular(600, 20, 580, 500, WHITE)
+    start_screen.draw(screen)
+
+    first=font2.render(text, False, WHITE, BLACK)
     second=font.render(text1, False, WHITE, BLACK)
     third=font.render(text2, False, WHITE, BLACK)
     fourth=font.render(text3, False, WHITE, BLACK)
@@ -117,18 +117,26 @@ def start():
     sixth=font.render(text5, False, WHITE, BLACK)
     seventh=font.render(text6, False, WHITE, BLACK)
     eighth=font.render(text7, False, WHITE, BLACK)
+
+    screen.blit(first, (730, 40))
+    pygame.display.update()
+    pygame.time.delay(3000)
+
     screen.blit(second, (620, 100))
     screen.blit(third, (620, 160))
     screen.blit(fourth, (620, 220))
     screen.blit(fifth, (620, 280))
     pygame.display.update()
     pygame.time.delay(8000)
+
     screen.blit(sixth, (820, 340))
     pygame.display.update()
     pygame.time.delay(3000)
+
     screen.blit(seventh, (620, 400))
     pygame.display.update()
     pygame.time.delay(5000)
+    
     screen.blit(eighth, (820, 460))
     pygame.display.update()
     pygame.time.delay(2000)
