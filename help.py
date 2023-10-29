@@ -51,9 +51,11 @@ def diagram(values) -> None:
     names = values.keys()
     val = values.values()
 
-    plt.figure(figsize=(6, 3))
+    plt.figure(figsize=(6, 5))
+    plt.ylabel('Percentage (%)', fontsize=16)
+    plt.xlabel('Options', fontsize=16)
     plt.bar(names, val)
-    plt.suptitle('Audience results')
+    plt.suptitle('Audience results', fontsize=20)
     plt.show()
 
 def phone_call(question) -> str:
