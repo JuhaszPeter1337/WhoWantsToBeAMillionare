@@ -55,6 +55,6 @@ class Button(Shape):
             else:
                 root = tkinter.Tk()
                 root.withdraw()
-                answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+                answer = tkinter.messagebox.askyesno(title='Stop', message="Are you sure you want to stop?")
                 if answer == True:
                     gameover(screen, money)
