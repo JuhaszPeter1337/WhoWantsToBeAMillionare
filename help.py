@@ -1,7 +1,7 @@
 import random
 from tkinter import *
 from tkinter import messagebox
-from typing import List
+from typing import List, Dict
 import matplotlib.pyplot as plt
 
 phone = [
@@ -10,7 +10,7 @@ phone = [
     "This question is very easy, the correct answer is..."
 ]
 
-def popup(text):
+def popup(text) -> None:
     top = Tk() # to hide the main window
     top.wm_withdraw()
     messagebox.showinfo(title='Phone-a-Friend', message=text)
@@ -30,7 +30,7 @@ def use_audience(question) -> List[int]:
         wrong_three = diff
         return [correct, wrong_one, wrong_two, wrong_three]
     
-def evaluate_audience(question, values) -> dict:
+def evaluate_audience(question, values) -> Dict[str, int]:
     options = ["A", "B", "C", "D"]
     my_dict = {}
 
@@ -45,9 +45,10 @@ def evaluate_audience(question, values) -> dict:
             my_dict[answer] = number
             options.remove(answer)
             values.remove(number)
+        print(my_dict)
     return my_dict
 
-def diagram(values):
+def diagram(values) -> None:
     names = values.keys()
     val = values.values()
 
