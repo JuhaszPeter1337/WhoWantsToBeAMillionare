@@ -25,6 +25,13 @@ sudo apt install python3-pip -y
 pip3 install pygame
 ```
 
+### matplotlib
+
+```
+pip3 install matplotlib
+```
+
+
 ## Start app
 
 ```
