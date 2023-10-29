@@ -10,18 +10,18 @@ class Ellipse(Shape):
         super().__init__(x, y, width, height)
         self.type = type
 
-    def draw(self, screen):
+    def draw(self, screen) -> None:
         pygame.draw.ellipse(screen, BLUE, (self.x, self.y, self.width, self.height))
 
     #(x - h)^2 / a^2 + (y - k)^2 / b^2 <= 1
-    def isOver(self, pos):
+    def isOver(self, pos) -> float:
         point_x, point_y = pos[0], pos[1]
         ellipse_center_x, ellipse_center_y = self.x + self.width / 2, self.y + self.height / 2
         half_width, half_height = self.width / 2, self.height / 2
         p = ((math.pow((point_x - ellipse_center_x), 2) / math.pow(half_width, 2)) + (math.pow((point_y - ellipse_center_y), 2) / math.pow(half_height, 2)))
         return p
 
-    def update(self, screen):
+    def update(self, screen) -> None:
         global fifty, phone, audience
         collision = self.isOver(pygame.mouse.get_pos())
         if collision <= 1:

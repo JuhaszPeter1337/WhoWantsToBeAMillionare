@@ -8,7 +8,7 @@ class Rectangular(Shape):
         self.outline = outline
         self.text = text
 
-    def draw(self, screen):
+    def draw(self, screen) -> None:
 
         if self.outline:
             pygame.draw.rect(screen, self.outline, (self.x - 4, self.y - 4, self.width + 8, self.height + 8), 0)

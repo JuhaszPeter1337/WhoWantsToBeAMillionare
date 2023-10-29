@@ -5,5 +5,5 @@ class Shape():
         self.width = width
         self.height = height
         
-    def draw(self):
+    def draw(self) -> None:
         pass

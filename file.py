@@ -4,7 +4,7 @@ questions = "questions/questions.txt"
 
 quiz = []
 
-def read_from_file():
+def read_from_file() -> None:
     try:
         with open(questions, "r") as file:
             for line in file:

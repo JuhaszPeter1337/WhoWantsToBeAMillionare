@@ -21,7 +21,7 @@ money = [100, 200, 500, 700, 1000,
 
 my_money = 0
 
-def find_correct_answer(answer):
+def find_correct_answer(answer) -> int:
     number = None
     if answer == "A":
         number = 2
@@ -33,7 +33,7 @@ def find_correct_answer(answer):
         number = 5
     return number
 
-def money_calc(money) -> (int):
+def money_calc(money) -> int:
     if money < 1000:
         return 0
     if money < 32000:
