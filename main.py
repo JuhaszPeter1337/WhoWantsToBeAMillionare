@@ -109,11 +109,14 @@ def main():
                                     obj.draw(screen, answered=True, correct=True)
                                     pygame.display.update()
                                     pygame.time.delay(3000)
-                                    question_counter = question_counter + 1 if question_counter < 15 else 1
-                                    correct_answers = correct_answers + 1 if correct_answers < 14 else 0
-                                    my_money = money[correct_answers - 1]
-                                    quiz.pop(rnd)
-                                    answered = True
+                                    if question_counter < 15 and correct_answers < 14:
+                                        question_counter = question_counter + 1
+                                        correct_answers = correct_answers + 1
+                                        my_money = money[correct_answers - 1]
+                                        quiz.pop(rnd)
+                                        answered = True
+                                    else:
+                                        winner(screen, my_money)
                                 else:
                                     obj.incorrect()
                                     obj.draw(screen, answered=True, incorrect=True)

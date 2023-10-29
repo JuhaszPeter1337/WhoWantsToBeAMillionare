@@ -42,18 +42,27 @@ def start(screen):
 
     screen.blit(first, (730, 40))
     pygame.display.update()
-    pygame.time.delay(3000)
+    pygame.time.delay(2000)
 
     screen.blit(second, (620, 100))
-    screen.blit(third, (620, 160))
-    screen.blit(fourth, (620, 220))
-    screen.blit(fifth, (620, 280))
     pygame.display.update()
-    pygame.time.delay(8000)
+    pygame.time.delay(4000)
+
+    screen.blit(third, (620, 160))
+    pygame.display.update()
+    pygame.time.delay(4000)
+
+    screen.blit(fourth, (620, 220))
+    pygame.display.update()
+    pygame.time.delay(4000)
+    screen.blit(fifth, (620, 280))
+
+    pygame.display.update()
+    pygame.time.delay(4000)
 
     screen.blit(sixth, (820, 340))
     pygame.display.update()
-    pygame.time.delay(3000)
+    pygame.time.delay(5000)
 
     screen.blit(seventh, (620, 400))
     pygame.display.update()
@@ -88,6 +97,47 @@ def gameover(screen, money):
     pygame.time.delay(3000)
 
     screen.blit(second, (800 - c * 5, 175))
+    pygame.display.update()
+    pygame.time.delay(3000)
+
+    screen.blit(third, (730, 250))
+    pygame.display.update()
+    pygame.time.delay(3000)
+
+    screen.blit(fourth, (620, 325))
+    pygame.display.update()
+    pygame.time.delay(5000)
+
+    screen.blit(fifth, (750, 400))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    pygame.quit()
+    sys.exit()
+
+def winner(screen, money):
+    screen.blit(MAN, (0, 0))
+
+    win = f"The game has ended. You win!"
+    money_text = f"You won {money}$."
+    thanking_text = "Thank you for playing!"
+    timing_text = "The game is about to quit in 5 seconds."
+    ending_text = f"See you soon, bye!"
+
+    end_screen = Rectangular(600, 20, 580, 500, WHITE)
+    end_screen.draw(screen)
+
+    first = font3.render(win, False, WHITE, BLACK)
+    second=font3.render(money_text, False, WHITE, BLACK)
+    third=font3.render(thanking_text, False, WHITE, BLACK)
+    fourth=font3.render(timing_text, False, WHITE, BLACK)
+    fifth=font3.render(ending_text, False, WHITE, BLACK)
+
+    screen.blit(first, (680, 100))
+    pygame.display.update()
+    pygame.time.delay(3000)
+
+    screen.blit(second, (765, 175))
     pygame.display.update()
     pygame.time.delay(3000)
 
