@@ -20,7 +20,7 @@ def count_digits(number) -> int:
         count=count+1
     return count
 
-def create_text(screen, text, pos, font):
+def create_text(screen, text, pos, font) -> None:
     if text == "Game over!" or text == "The game has ended. You won!":
         font=fonts[font].render(text, False, RED, BLACK)
     else:
@@ -29,7 +29,7 @@ def create_text(screen, text, pos, font):
     pygame.display.update()
     pygame.time.delay(2000)
 
-def start(screen):
+def start(screen) -> None:
     screen.blit(MAN, (0, 0))
 
     texts = [
@@ -54,7 +54,7 @@ def start(screen):
 
     pygame.time.delay(2000)
 
-def gameover(screen, money):
+def gameover(screen, money) -> None:
     screen.blit(MAN, (0, 0))
 
     texts = [
@@ -81,7 +81,7 @@ def gameover(screen, money):
     pygame.quit()
     sys.exit()
 
-def winner(screen, money):
+def winner(screen, money) -> None:
     screen.blit(MAN, (0, 0))
 
     texts = [
@@ -106,7 +106,7 @@ def winner(screen, money):
     pygame.quit()
     sys.exit()
 
-def description(screen):
+def description(screen) -> None:
     screen.blit(MAN, (0, 0))
 
     texts = [
@@ -133,7 +133,7 @@ def description(screen):
     pygame.time.delay(8000)
 
 
-def menu(screen):
+def menu(screen) -> None:
     running = True
 
     screen.blit(BACKGROUND, (0, 0))
@@ -156,10 +156,9 @@ def menu(screen):
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for obj in objects:
                         value = obj.isOver(pygame.mouse.get_pos())
-                        if (obj.type == "play"):
-                            if (value):
-                                pushed = True
-                                running = False
+                        if (value and obj.type == "play"):
+                            pushed = True
+                            running = False
                         elif (value and obj.type == "description"):
                             description(screen)
                             pushed = True
