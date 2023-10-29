@@ -6,7 +6,7 @@ from constants import *
 from rectangular import *
 import ellipse
 from ellipse import *
-from button import *
+import button
 from screens import *
 
 pygame.init()
@@ -56,11 +56,11 @@ def main():
         objects = [
             Rectangular(425, 533, 340, 75, WHITE, f"Question {question_counter} for {money[correct_answers]}$"),
             Rectangular(100, 610, 1000, 130, WHITE, quiz[rnd].question),
-            Button(100, 770, 450, 80, WHITE, "A","A, " + quiz[rnd].option_A),
-            Button(650, 770, 450, 80, WHITE, "B","B, " + quiz[rnd].option_B),
-            Button(100, 880, 450, 80, WHITE, "C","C, " + quiz[rnd].option_C),
-            Button(650, 880, 450, 80, WHITE, "D","D, " + quiz[rnd].option_D),
-            Button(105, 535, 140, 60, BLUE, "stop"),
+            button.Button(100, 770, 450, 80, WHITE, "A","A, " + quiz[rnd].option_A),
+            button.Button(650, 770, 450, 80, WHITE, "B","B, " + quiz[rnd].option_B),
+            button.Button(100, 880, 450, 80, WHITE, "C","C, " + quiz[rnd].option_C),
+            button.Button(650, 880, 450, 80, WHITE, "D","D, " + quiz[rnd].option_D),
+            button.Button(105, 535, 140, 60, BLUE, "stop"),
             Ellipse(779, 535, 100, 65, "fifty"),
             Ellipse(889, 535, 100, 65, "phone"),
             Ellipse(999, 535, 100, 65, "audience")
@@ -92,17 +92,17 @@ def main():
                 global my_money
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for obj in objects:
-                        if type(obj) == Button:
+                        if type(obj) == button.Button:
                             obj.update(screen, my_money)
-                        if type(obj) == Button and obj.pushed:
+                        if type(obj) == button.Button and obj.pushed:
                             obj.draw(screen, answered=True)
                             pygame.display.update()
                             pygame.time.delay(3000)
                         if type(obj) == ellipse.Ellipse:
-                            obj.update(screen)
+                            obj.update(screen, quiz[rnd])
                     
                     for obj in objects:
-                        if type(obj) == Button:
+                        if type(obj) == button.Button:
                             if obj.pushed:
                                 if obj.type == quiz[rnd].correct_answer:
                                     obj.correct()

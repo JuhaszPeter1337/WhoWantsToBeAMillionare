@@ -2,6 +2,7 @@ import pygame
 import math
 from constants import *
 from shape import *
+from help import *
 
 audience, phone, fifty = True, True, True
 
@@ -21,7 +22,7 @@ class Ellipse(Shape):
         p = ((math.pow((point_x - ellipse_center_x), 2) / math.pow(half_width, 2)) + (math.pow((point_y - ellipse_center_y), 2) / math.pow(half_height, 2)))
         return p
 
-    def update(self, screen) -> None:
+    def update(self, screen, question) -> None:
         global fifty, phone, audience
         collision = self.isOver(pygame.mouse.get_pos())
         if collision <= 1:
@@ -32,6 +33,8 @@ class Ellipse(Shape):
                 pygame.display.update()
             elif self.type == "phone" and phone:
                 phone = False
+                correct_answer = phone_call(question)
+                popup(correct_answer)
                 pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
                 pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
                 pygame.display.update()
