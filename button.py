@@ -2,6 +2,7 @@ import pygame
 from constants import *
 from main import gameover
 from shape import *
+import tkinter
 
 class Button(Shape):
     def __init__(self, x, y, width, height, outline, type, text = "", pushed = False) -> None:
@@ -52,4 +53,8 @@ class Button(Shape):
                     self.answer()
                     self.pushed = True
             else:
-                gameover(screen, money)
+                root = tkinter.Tk()
+                root.withdraw()
+                answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+                if answer == True:
+                    gameover(screen, money)

@@ -45,7 +45,6 @@ def evaluate_audience(question, values) -> Dict[str, int]:
             my_dict[answer] = number
             options.remove(answer)
             values.remove(number)
-        print(my_dict)
     return my_dict
 
 def diagram(values) -> None:

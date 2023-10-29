@@ -3,6 +3,7 @@ import sys
 from rectangular import *
 from constants import *
 import button
+import tkinter
 
 pygame.font.init()
 
@@ -164,8 +165,12 @@ def menu(screen) -> None:
                             pushed = True
                             running = False
                         elif (value and obj.type == "quit"):
-                            pygame.quit()
-                            sys.exit()
+                            root = tkinter.Tk()
+                            root.withdraw()
+                            answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+                            if answer == True:
+                                pygame.quit()
+                                sys.exit()
 
                 if event.type == pygame.QUIT:
                     pygame.quit()
