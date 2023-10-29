@@ -42,7 +42,8 @@ class Ellipse(Shape):
                 audience = False
                 values = use_audience(question)
                 evaulate = evaluate_audience(question, values)
-                diagram(evaulate)
+                sorted_dict = dict(sorted(evaulate.items()))
+                diagram(sorted_dict)
                 pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
                 pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
                 pygame.display.update()
