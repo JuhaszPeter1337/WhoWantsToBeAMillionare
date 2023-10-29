@@ -18,6 +18,8 @@ money = [100, 200, 500, 700, 1000,
         2000, 4000, 8000, 16000, 32000,
         64000, 125000, 250000, 500000, 1000000]
 
+my_money = 0
+
 font = pygame.font.Font('freesansbold.ttf', 26)
 
 def find_correct_answer(answer):
@@ -32,12 +34,29 @@ def find_correct_answer(answer):
         number = 5
     return number
 
-def gameover():
+def money_calc(money) -> (int):
+    if money < 1000:
+        return 0
+    if money < 32000:
+        return 1000
+    if money < 1000000:
+        return 32000
+
+def gameover(money):
     screen.blit(BACKGROUND, (0, 0))
-    end_screen = Rectangular(200, 600, 800, 300, WHITE, "Game over, have a great day, bye!")
+    money_text = f"Game over! You won {money}$."
+    time_text = "The game is about to quit in 10 seconds."
+    ending_text = f"See you soon, bye!"
+    end_screen = Rectangular(200, 600, 800, 300, WHITE)
+    m = Rectangular(300, 650, 600, 50, BLACK, money_text)
+    t = Rectangular(300, 730, 600, 50, BLACK, time_text)
+    e = Rectangular(300, 810, 600, 50, BLACK, ending_text)
     end_screen.draw(screen)
+    m.draw(screen)
+    t.draw(screen)
+    e.draw(screen)
     pygame.display.update()
-    pygame.time.delay(5000)
+    pygame.time.delay(10000)
     pygame.quit()
     sys.exit()
 
@@ -46,7 +65,6 @@ def main():
 
     question_counter = 1
     correct_answers = 0
-    my_money = 0
 
     screen.blit(BACKGROUND, (0, 0))
 
@@ -90,10 +108,11 @@ def main():
         answered = False
         while(not answered):
             for event in pygame.event.get():
+                global my_money
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for obj in objects:
                         if type(obj) == Button:
-                            obj.update()
+                            obj.update(my_money)
                         if type(obj) == Button and obj.pushed:
                             obj.draw(screen, answered=True)
                             pygame.display.update()
@@ -111,6 +130,7 @@ def main():
                                     pygame.time.delay(3000)
                                     question_counter = question_counter + 1 if question_counter < 15 else 1
                                     correct_answers = correct_answers + 1 if correct_answers < 14 else 0
+                                    my_money = money[correct_answers - 1]
                                     quiz.pop(rnd)
                                     answered = True
                                 else:
@@ -121,7 +141,8 @@ def main():
                                     objects[number].draw(screen, answered=True, incorrect=False)
                                     pygame.display.update()
                                     pygame.time.delay(5000)
-                                    gameover()
+                                    calculated_money = money_calc(my_money)
+                                    gameover(calculated_money)
 
                 elif event.type == pygame.QUIT:
                     pygame.quit()

@@ -45,12 +45,11 @@ class Button(Shape):
     def incorrect(self):
         self.outline = RED
 
-    def update(self):
+    def update(self, money = None):
         if self.isOver(pygame.mouse.get_pos()):
             if self.type != "stop":
                 if self.outline == WHITE:
                     self.answer()
                     self.pushed = True
             else:
-                print("Game over!")
-                gameover()
+                gameover(money)
