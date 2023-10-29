@@ -136,5 +136,6 @@ def main():
 
 if __name__ == "__main__":
     read_from_file()
+    loading_screen(screen)
     start(screen)
     main()

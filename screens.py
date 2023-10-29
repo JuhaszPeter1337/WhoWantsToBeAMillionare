@@ -155,3 +155,8 @@ def winner(screen, money):
 
     pygame.quit()
     sys.exit()
+
+def loading_screen(screen):
+    screen.blit(BACKGROUND, (0, 0))
+    pygame.display.update()
+    pygame.time.delay(5000)
