@@ -129,8 +129,12 @@ def main():
                                     gameover(screen, calculated_money)
 
                 elif event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    root = tkinter.Tk()
+                    root.withdraw()
+                    answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+                    if answer == True:
+                        pygame.quit()
+                        sys.exit()
 
             pygame.event.pump()
 
