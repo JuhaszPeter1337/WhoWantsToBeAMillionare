@@ -11,8 +11,12 @@ phone = [
 def popup(text):
     top = Tk() # to hide the main window
     top.wm_withdraw()
-    messagebox.showinfo(title='Phone', message=text)
+    messagebox.showinfo(title='Phone-a-Friend', message=text)
 
 def phone_call(question) -> str:
     text = random.choice(phone)
-    return f"{text} {question.correct_answer}"
+    complete_text = f"""*ringing soud*
+Let me hear the question.
+*thinking*
+{text} {question.correct_answer}"""
+    return complete_text
