@@ -15,7 +15,7 @@ def popup(text):
 
 def phone_call(question) -> str:
     text = random.choice(phone)
-    complete_text = f"""*ringing soud*
+    complete_text = f"""*ringing sound*
 Let me hear the question.
 *thinking*
 {text} {question.correct_answer}"""
