@@ -9,6 +9,7 @@ pygame.font.init()
 font = pygame.font.Font('freesansbold.ttf', 26)
 font2 = pygame.font.Font('freesansbold.ttf', 30)
 font3 = pygame.font.Font('freesansbold.ttf', 28)
+font4 = pygame.font.Font('freesansbold.ttf', 20)
 
 def count_digits(number) -> int:
     count=0
@@ -157,6 +158,93 @@ def winner(screen, money):
     pygame.quit()
     sys.exit()
 
+def description(screen):
+    screen.blit(MAN, (0, 0))
+
+    text = "The goal is to correctly answer 15 consecutive questions"
+    text2 = "with each question having a higher prize value than the"
+    text3 = "previous one, culminating in a grand prize of one million"
+    text4 = "currency units."
+
+    text5 = "Choose from letters A, B, C or D to answer the question."
+    
+    text6 = 'Don\'t forget you have 3 jokers. "Ask the Audience",'
+    text7 = 'where the studio audience votes on the answer.'
+    text8 = '"Phone-a-Friend", allowing contestants to make a call for'
+    text9 = 'help with the answer. "50:50", which removes two'
+    text10 = 'incorrect answers, leaving the correct answer and'
+    text11 = 'one remaining answer.'
+
+    text12 = "You can stop and finish the game whenever you want to."
+
+    start_screen = Rectangular(600, 20, 580, 500, WHITE)
+    start_screen.draw(screen)
+
+    first=font4.render(text, False, WHITE, BLACK)
+    second=font4.render(text2, False, WHITE, BLACK)
+    third=font4.render(text3, False, WHITE, BLACK)
+    fourth=font4.render(text4, False, WHITE, BLACK)
+
+    fifth=font4.render(text5, False, WHITE, BLACK)
+    sixth=font4.render(text6, False, WHITE, BLACK)
+
+    seventh=font4.render(text7, False, WHITE, BLACK)
+    eighth=font4.render(text8, False, WHITE, BLACK)
+    nineth=font4.render(text9, False, WHITE, BLACK)
+    tenth=font4.render(text10, False, WHITE, BLACK)
+    eleventh=font4.render(text11, False, WHITE, BLACK)
+
+    twelfth=font4.render(text12, False, WHITE, BLACK)
+
+    screen.blit(first, (605, 40))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(second, (605, 80))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(third, (605, 120))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(fourth, (605, 160))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(fifth, (605, 200))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(sixth, (605, 240))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(seventh, (605, 280))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(eighth, (605, 320))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(nineth, (605, 360))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(tenth, (605, 400))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(eleventh, (605, 440))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
+    screen.blit(twelfth, (605, 480))
+    pygame.display.update()
+    pygame.time.delay(10000)
+
+
 def menu(screen):
     running = True
 
@@ -184,6 +272,10 @@ def menu(screen):
                             if (value):
                                 pushed = True
                                 running = False
+                        elif (value and obj.type == "description"):
+                            description(screen)
+                            pushed = True
+                            running = False
                         elif (value and obj.type == "quit"):
                             pygame.quit()
                             sys.exit()
