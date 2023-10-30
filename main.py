@@ -98,6 +98,7 @@ def main():
                             obj.draw(screen, answered=True)
                             pygame.display.update()
                             pygame.time.delay(3000)
+                            pygame.event.pump()
                         if type(obj) == ellipse.Ellipse:
                             obj.update(screen, quiz[rnd])
                     
@@ -109,6 +110,7 @@ def main():
                                     obj.draw(screen, answered=True, correct=True)
                                     pygame.display.update()
                                     pygame.time.delay(3000)
+                                    pygame.event.pump()
                                     if question_counter < 15 and correct_answers < 14:
                                         question_counter = question_counter + 1
                                         correct_answers = correct_answers + 1
@@ -125,6 +127,7 @@ def main():
                                     objects[number].draw(screen, answered=True, incorrect=False)
                                     pygame.display.update()
                                     pygame.time.delay(5000)
+                                    pygame.event.pump()
                                     calculated_money = money_calc(my_money)
                                     gameover(screen, calculated_money)
 

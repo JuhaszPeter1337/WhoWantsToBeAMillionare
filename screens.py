@@ -44,6 +44,7 @@ def create_text(screen, text, pos, font) -> None:
     screen.blit(font, (pos[0], pos[1]))
     pygame.display.update()
     pygame.time.delay(2000)
+    pygame.event.pump()
 
 def menu(screen) -> None:
     running = True
@@ -118,6 +119,7 @@ def description(screen) -> None:
         create_text(screen, texts[i], (605, (i + 1) * 40), 0)
 
     pygame.time.delay(8000)
+    pygame.event.pump()
 
     menu(screen)
 
@@ -161,6 +163,7 @@ def start(screen) -> None:
         create_text(screen, texts[i], (620, 50 + ((i + 3) * 60)), 1)
 
     pygame.time.delay(2000)
+    pygame.event.pump()
 
 def gameover(screen, money) -> None:
     screen.blit(MAN, (0, 0))
@@ -185,6 +188,7 @@ def gameover(screen, money) -> None:
     create_text(screen, texts[4], (750 - len(name) * 7 , 400), 2)
 
     pygame.time.delay(2000)
+    pygame.event.pump()
 
     pygame.quit()
     sys.exit()
@@ -210,6 +214,7 @@ def winner(screen, money) -> None:
     create_text(screen, texts[4], (750, 400), 2)
 
     pygame.time.delay(2000)
+    pygame.event.pump()
 
     pygame.quit()
     sys.exit()
