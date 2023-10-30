@@ -118,7 +118,7 @@ def main():
                                         quiz.pop(rnd)
                                         answered = True
                                     else:
-                                        winner(screen, my_money)
+                                        winner(screen, money[-1])
                                 else:
                                     obj.incorrect()
                                     obj.draw(screen, answered=True, incorrect=True)
