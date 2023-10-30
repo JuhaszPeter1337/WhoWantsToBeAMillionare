@@ -46,4 +46,14 @@ python/python3 main.py
 
 ## Design
 
-![Alt text](repo_images/game.JPG?raw=true "Title") 
+![Alt text](repo_images/description.png?raw=true "Description")
+ 
+![Alt text](repo_images/game.JPG?raw=true "Game") 
+
+![Alt text](repo_images/phone.JPG?raw=true "Phone") 
+
+![Alt text](repo_images/fifty.JPG?raw=true "Fifty") 
+
+![Alt text](repo_images/audience.JPG?raw=true "Audience") 
+
+![Alt text](repo_images/game_over.JPG?raw=true "Game over") 
