@@ -49,6 +49,9 @@ python/python3 main.py
 ### Game description scene
 
 ![Alt text](repo_images/description.png?raw=true "Description")
+### Starting screen
+
+![Alt text](repo_images/start_screen.JPG?raw=true "Starting screen")
 ### The game
  
 ![Alt text](repo_images/game.JPG?raw=true "Game") 
