@@ -1,10 +1,8 @@
 # Who Wants To Be A Millionare game with Pygame
 
-## Description
+## Game Description
 
 Who Wants To Be A Millionare game in Python
-
-### Game description
 
 The goal is to correctly answer 15 consecutive questions, with each question having a higher prize value than the previous one, culminating in a grand prize of one million currency units.
 
