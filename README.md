@@ -2,8 +2,6 @@
 
 ## Game Description
 
-Who Wants To Be A Millionare game in Python
-
 The goal is to correctly answer 15 consecutive questions, with each question having a higher prize value than the previous one, culminating in a grand prize of one million currency units.
 
 Choose from letters A, B, C or D to answer the question.
