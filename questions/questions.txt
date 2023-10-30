@@ -105,3 +105,23 @@ Who is the author of 'The Hobbit'?,George R.R. Martin,J.R.R. Tolkien,C.S. Lewis,
 What is the second most abundant gas in the Earth's atmosphere?,Oxygen,Carbon dioxide,Nitrogen,Argon,A
 Which gas is used in balloons to make them float?,Helium,Hydrogen,Oxygen,Nitrogen,A
 Who wrote 'The Adventures of Sherlock Holmes'?,Agatha Christie,Edgar Allan Poe,Raymond Chandler,Arthur Conan Doyle,D
+Which of these materials is used to make vests bulletproof?,Kevlar,Lycra,Gore-tex,Polystyrene,A
+What animal's name means "river horse" in Greek?,Platypus,Hippopotamus,Rhinoceros,Manatee,B
+Which of these best describes music that is played "pianissimo"?,Very soft,Very fast,Moderately loud,Loud,A
+In Norse mythology Mjolnir was the name of what?,Thor's hammer,Odin's horse,Sigmund's sword,Loki's magic necklace,A
+A person who earns a Ph.D. is literally a certified doctor of what?,Photography,Pharmacology,Philosophy,Psychology,C
+British actor/comedian Rowan Atkinson plays what famous character?,Mr. Nut,Mr. Bean,Mr. Pea,Mr. Sprout,B
+An albino gorilla usually has what color fur?,Brown,Black,White,Golden,C
+What part of speech is the word "and"?,Verb,Noun,Preposition,Conjunction,D
+U.S. battleships are traditionally named for what?,Presidents,Constellations,States,War heroes,C
+The Strait of Gibraltar connects the Atlantic Ocean and what sea?,Mediterranean,Red,North,Black,A
+By definition what does a meteorologist predict?,Stock fluctuations,Earthquakes,Weather changes,Meteors,C
+The comic strip character Garfield the cat hates what day of the week?,Sunday,Monday,Thursday,Friday,B
+What name is legally used to indicate a woman whose name is unknown?,Joan Doe,Jane Doe,Jean Doe,Lotta Doe,B
+The highest mountain in South America is located in what country?,Brazil,Peru,Ecuador,Argentina,D
+In 1893 what country was the first to grant women the right to vote?,Canada,Sweden,New Zealand,Denmark,C
+Which state in the United States is largest by area?,Alaska,California,Texas,Hawaii,A
+What is Aurora Borealis commonly known as?,Fairy Dust,Northern Lights,Book of ages,a Game of Thrones main character,B
+When is the International Workers' Day?,15th April,12th December,1st May,1st August,C
+What does the "F" stand for in FBI?,Foreign,Federal,Flappy,Face,B
+What was the first university in the United States?,Harvard,University of Washington,Yale,Oxford,A
