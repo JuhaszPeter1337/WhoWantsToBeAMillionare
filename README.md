@@ -42,4 +42,8 @@ pip/pip3 install matplotlib
 
 ```
 python/python3 main.py
-``` 
+```
+
+## Design
+
+![Alt text](repo_images/game.JPG?raw=true "Title") 
