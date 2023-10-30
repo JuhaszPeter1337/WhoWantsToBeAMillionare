@@ -6,6 +6,8 @@ import button
 import tkinter
 from tkinter.simpledialog import askstring
 
+# Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
+
 pygame.font.init()
 
 name = None
