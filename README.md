@@ -49,23 +49,18 @@ python/python3 main.py
 ### Game description scene
 
 ![Alt text](repo_images/description.png?raw=true "Description")
-
 ### The game
  
 ![Alt text](repo_images/game.JPG?raw=true "Game") 
-
 ### Phone a friend
 
 ![Alt text](repo_images/phone.JPG?raw=true "Phone") 
-
 ### Fifty-fifty
 
 ![Alt text](repo_images/fifty_fifty.JPG?raw=true "Fifty") 
-
 ### Ask audience
 
 ![Alt text](repo_images/audience.JPG?raw=true "Audience") 
-
 ### Game over scene
 
 ![Alt text](repo_images/game_over.JPG?raw=true "Game over") 
