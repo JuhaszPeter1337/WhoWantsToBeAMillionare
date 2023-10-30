@@ -46,6 +46,9 @@ python/python3 main.py
 
 ## Design
 
+### Menu
+
+![Alt text](repo_images/menu.JPG?raw=true "Menu")
 ### Game description scene
 
 ![Alt text](repo_images/description.png?raw=true "Description")
