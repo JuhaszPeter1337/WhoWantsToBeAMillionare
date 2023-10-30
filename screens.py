@@ -56,9 +56,9 @@ def menu(screen) -> None:
 
     while running:
         objects = [
-            button.Button(415, 550, 400, 115, WHITE, "play","PLAY"),
-            button.Button(415, 700, 400, 115, WHITE, "description","DESCRIPTION"),
-            button.Button(415, 855, 400, 115, WHITE, "quit","QUIT")
+            button.Button(315, 550, 600, 115, WHITE, "play","PLAY"),
+            button.Button(315, 700, 600, 115, WHITE, "description","DESCRIPTION"),
+            button.Button(315, 850, 600, 115, WHITE, "quit","QUIT")
         ]
 
         for obj in objects:
