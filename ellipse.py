@@ -3,6 +3,7 @@ import math
 from constants import *
 from shape import *
 from help import *
+from button import *
 
 audience, phone, fifty = True, True, True
 
@@ -28,6 +29,18 @@ class Ellipse(Shape):
         if collision <= 1:
             if self.type == "fifty" and fifty:
                 fifty = False
+                obj = fifty_fifty(question)
+                
+                buttons = [
+                    Button(100, 770, 450, 80, WHITE, "A","A, " + obj.option_A),
+                    Button(650, 770, 450, 80, WHITE, "B","B, " + obj.option_B),
+                    Button(100, 880, 450, 80, WHITE, "C","C, " + obj.option_C),
+                    Button(650, 880, 450, 80, WHITE, "D","D, " + obj.option_D)
+                ]
+
+                for button in buttons:
+                    button.draw(screen)
+
                 pygame.draw.line(screen, RED, (779, 535), (879, 595), width=6)
                 pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
                 pygame.display.update()

@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 from typing import List, Dict
 import matplotlib.pyplot as plt
+from question import *
 
 phone = [
     "I'm not sure but I think the correct answer is...", 
@@ -65,3 +66,21 @@ Let me hear the question.
 *thinking*
 {text} {question.correct_answer}"""
     return complete_text
+
+def fifty_fifty(question) -> Question:
+    options = ["A", "B", "C", "D"]
+    option1 = random.choice(options)
+    option2 = random.choice(options)
+    while option1 == question.correct_answer:
+        option1 = random.choice(options)
+    while option2 == question.correct_answer or option2 == option1:
+        option2 = random.choice(options)
+    if option1 == "A" or option2 == "A":
+        question.option_A = "-"
+    if option1 == "B" or option2 == "B":
+        question.option_B = "-"
+    if option1 == "C" or option2 == "C":
+        question.option_C = "-"
+    if option1 == "D" or option2 == "D":
+        question.option_D = "-"
+    return question
