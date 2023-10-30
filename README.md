@@ -55,7 +55,7 @@ python/python3 main.py
 ### Phone a friend
 
 ![Alt text](repo_images/phone.JPG?raw=true "Phone") 
-### Fifty-fifty
+### Fifty fifty
 
 ![Alt text](repo_images/fifty_fifty.JPG?raw=true "Fifty") 
 ### Ask audience
