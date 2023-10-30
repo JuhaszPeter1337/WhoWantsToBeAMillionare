@@ -44,6 +44,7 @@ class Ellipse(Shape):
                 pygame.draw.line(screen, RED, (779, 535), (879, 595), width=6)
                 pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
                 pygame.display.update()
+
             elif self.type == "phone" and phone:
                 phone = False
                 correct_answer = phone_call(question)
@@ -51,6 +52,7 @@ class Ellipse(Shape):
                 pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
                 pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
                 pygame.display.update()
+                
             elif self.type == "audience" and audience:
                 audience = False
                 values = use_audience(question)
