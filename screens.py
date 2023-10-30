@@ -80,6 +80,7 @@ def menu(screen) -> None:
                             root = tkinter.Tk()
                             root.withdraw()
                             answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+                            pygame.event.pump()
                             if answer == True:
                                 pygame.quit()
                                 sys.exit()
@@ -88,6 +89,7 @@ def menu(screen) -> None:
                     root = tkinter.Tk()
                     root.withdraw()
                     answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+                    pygame.event.pump()
                     if answer == True:
                         pygame.quit()
                         sys.exit()
@@ -145,6 +147,7 @@ def start(screen) -> None:
     my_w = tkinter.Tk()
     my_w.withdraw()
     name = askstring(title='Your name', prompt='What is your name? (max 16 character long and no special characters)')
+    pygame.event.pump()
     crit = meets_name_criteria(name)
     while not crit:
         name = askstring(title='Your name', prompt='Please enter correct name! (max 16 character long and no special characters)')

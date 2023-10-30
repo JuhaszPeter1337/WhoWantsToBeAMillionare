@@ -1,4 +1,5 @@
 import random
+import pygame
 from tkinter import *
 from tkinter import messagebox
 from typing import List, Dict
@@ -15,6 +16,7 @@ def popup(text) -> None:
     top = Tk() # to hide the main window
     top.wm_withdraw()
     messagebox.showinfo(title='Phone-a-Friend', message=text)
+    pygame.event.pump()
 
 def use_audience(question) -> List[int]:
     if (question.option_A == '-' or question.option_B == '-' or question.option_C == '-' or question.option_D == '-'):

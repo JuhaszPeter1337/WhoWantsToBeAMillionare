@@ -135,6 +135,7 @@ def main():
                     root = tkinter.Tk()
                     root.withdraw()
                     answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+                    pygame.event.pump()
                     if answer == True:
                         pygame.quit()
                         sys.exit()
