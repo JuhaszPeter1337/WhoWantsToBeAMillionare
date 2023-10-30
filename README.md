@@ -47,12 +47,14 @@ python/python3 main.py
 ## Design
 
 ![Alt text](repo_images/description.png?raw=true "Description")
+
+![Alt text](repo_images/name.JPG?raw=true "Description")
  
 ![Alt text](repo_images/game.JPG?raw=true "Game") 
 
 ![Alt text](repo_images/phone.JPG?raw=true "Phone") 
 
-![Alt text](repo_images/fifty.JPG?raw=true "Fifty") 
+![Alt text](repo_images/fifty_fifty.JPG?raw=true "Fifty") 
 
 ![Alt text](repo_images/audience.JPG?raw=true "Audience") 
 
