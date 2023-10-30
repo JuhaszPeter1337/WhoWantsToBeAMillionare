@@ -8,9 +8,14 @@ The goal is to correctly answer 15 consecutive questions, with each question hav
 
 Choose from letters A, B, C or D to answer the question.
 
-Don't forget you have 3 jokers. "Ask the Audience", where the studio audience votes on the answer. "Phone-a-Friend", allowing contestants to make a call for help with the answer. "50:50", which removes two incorrect answers, leaving the correct answer and one remaining answer.
+Don't forget you have 3 jokers. 
+- "Ask the Audience", where the studio audience votes on the answer. 
+* "Phone-a-Friend", allowing contestants to make a call for help with the answer. 
++ "50:50", which removes two incorrect answers, leaving the correct answer and one remaining answer.
 
 You can stop and finish the game whenever you want to. Your money will be the price of the previous known question.
+
+If you answer the question wrong, it's game over.
 
 ## Prerequisites
 
