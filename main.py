@@ -54,7 +54,7 @@ def main():
         rnd = random.randint(0, length-1)
 
         objects = [
-            Rectangular(425, 533, 340, 75, WHITE, f"Question {question_counter} for {money[correct_answers]}$"),
+            Rectangular(415, 533, 350, 75, WHITE, f"Question {question_counter} for {money[correct_answers]}$"),
             Rectangular(100, 610, 1000, 130, WHITE, quiz[rnd].question),
             button.Button(100, 770, 450, 80, WHITE, "A","A, " + quiz[rnd].option_A),
             button.Button(650, 770, 450, 80, WHITE, "B","B, " + quiz[rnd].option_B),

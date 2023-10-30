@@ -7,6 +7,7 @@ import tkinter
 from tkinter.simpledialog import askstring
 
 # Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
+# should have root.mainloop() in there somewhere, so the gui will listen to os events (like the CloseWindow event).
 
 pygame.font.init()
 
