@@ -5,12 +5,13 @@ from shape import *
 import tkinter
 
 class Button(Shape):
-    def __init__(self, x, y, width, height, outline, type, text = "", pushed = False) -> None:
+    def __init__(self, x, y, width, height, outline, type, text = "", pushed = False, enabled = True) -> None:
         super().__init__(x, y, width, height)
         self.outline = outline
         self.type = type
         self.text = text
         self.pushed = pushed
+        self.enabled = enabled
 
     def draw(self, screen, outline = None, answered = False, correct = False, incorrect = False) -> None:
 

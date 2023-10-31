@@ -4,6 +4,8 @@ from constants import *
 from shape import *
 from help import *
 from button import *
+from file import quiz
+from typing import List
 
 audience, phone, fifty = True, True, True
 
@@ -23,7 +25,7 @@ class Ellipse(Shape):
         p = ((math.pow((point_x - ellipse_center_x), 2) / math.pow(half_width, 2)) + (math.pow((point_y - ellipse_center_y), 2) / math.pow(half_height, 2)))
         return p
 
-    def update(self, screen, question) -> None:
+    def update(self, screen, question) -> List[str]:
         global fifty, phone, audience
         collision = self.isOver(pygame.mouse.get_pos())
         if collision <= 1:
@@ -44,6 +46,8 @@ class Ellipse(Shape):
                 pygame.draw.line(screen, RED, (779, 535), (879, 595), width=6)
                 pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
                 pygame.display.update()
+
+                return [obj.option_A, obj.option_B, obj.option_C, obj.option_D]
 
             elif self.type == "phone" and phone:
                 phone = False

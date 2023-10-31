@@ -94,17 +94,33 @@ def main():
                     for obj in objects:
                         if type(obj) == button.Button:
                             obj.update(screen, my_money)
-                        if type(obj) == button.Button and obj.pushed:
+                        if type(obj) == button.Button and obj.pushed and obj.enabled:
                             obj.draw(screen, answered=True)
                             pygame.display.update()
                             pygame.time.delay(3000)
                             pygame.event.pump()
                         if type(obj) == ellipse.Ellipse:
-                            obj.update(screen, quiz[rnd])
-                    
+                            if obj.type == "fifty":
+                                q = obj.update(screen, quiz[rnd])
+                                if q != None:
+                                    objects[2].text = "A, " + q[0]
+                                    if q[0] == "-":
+                                        objects[2].enabled = False
+                                    objects[3].text = "B, " + q[1]
+                                    if q[1] == "-":
+                                        objects[3].enabled = False
+                                    objects[4].text = "C, " + q[2]
+                                    if q[2] == "-":
+                                        objects[4].enabled = False
+                                    objects[5].text = "D, " + q[3]
+                                    if q[3] == "-":
+                                        objects[5].enabled = False
+                            else:
+                                obj.update(screen, quiz[rnd])
+
                     for obj in objects:
                         if type(obj) == button.Button:
-                            if obj.pushed:
+                            if obj.pushed and obj.enabled:
                                 if obj.type == quiz[rnd].correct_answer:
                                     obj.correct()
                                     obj.draw(screen, answered=True, correct=True)
