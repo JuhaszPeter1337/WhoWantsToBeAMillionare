@@ -48,6 +48,11 @@ pip/pip3 install pygame
 pip/pip3 install matplotlib
 ```
 
+### pillow (Only if plot does not work on Linux)
+
+```
+pip install --upgrade pillow
+```
 
 ## Start app
 
