@@ -3,6 +3,8 @@ import pygame
 from tkinter import *
 from tkinter import messagebox
 from typing import List, Dict
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from question import *
 
