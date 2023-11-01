@@ -128,8 +128,8 @@ def main():
                                     pygame.time.delay(3000)
                                     pygame.event.pump()
                                     if question_counter < 15 and correct_answers < 14:
-                                        question_counter = question_counter + 1
-                                        correct_answers = correct_answers + 1
+                                        question_counter += 1
+                                        correct_answers += 1
                                         my_money = money[correct_answers - 1]
                                         quiz.pop(rnd)
                                         answered = True
