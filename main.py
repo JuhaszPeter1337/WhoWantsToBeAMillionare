@@ -165,6 +165,7 @@ def main():
                     answer = None
                     threading.Thread(target=wait_for_answer, daemon=True).start()
                     while (answer != True or answer != False):
+                        pygame.event.pump()
                         if answer == True:
                             pygame.quit()
                             sys.exit()
