@@ -54,8 +54,11 @@ def create_text(screen, text, pos, font) -> None:
 
 def wait_for_answer():
     global answer
+    root = tkinter.Tk()
+    root.withdraw()
     message = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
     answer = message
+    root.mainloop()
 
 def menu(screen) -> None:
     running = True
@@ -91,7 +94,7 @@ def menu(screen) -> None:
                             running = False
                         elif (value and obj.type == "quit"):
                             answer = None
-                            threading.Thread(target=wait_for_answer).start()
+                            threading.Thread(target=wait_for_answer, daemon=True).start()
                             while (answer != True or answer != False):
                                 pygame.event.pump()
                                 if answer == True:
@@ -102,7 +105,7 @@ def menu(screen) -> None:
 
                 if event.type == pygame.QUIT:
                     answer = None
-                    threading.Thread(target=wait_for_answer).start()
+                    threading.Thread(target=wait_for_answer, daemon=True).start()
                     while (answer != True or answer != False):
                         pygame.event.pump()
                         if answer == True:
