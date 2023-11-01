@@ -5,6 +5,7 @@ from constants import *
 import button
 import tkinter
 from tkinter.simpledialog import askstring
+import threading
 
 # Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
 # should have root.mainloop() in there somewhere, so the gui will listen to os events (like the CloseWindow event).
@@ -12,6 +13,8 @@ from tkinter.simpledialog import askstring
 pygame.font.init()
 
 name = None
+
+answer = None
 
 fonts = [
     pygame.font.Font('freesansbold.ttf', 20),
@@ -49,8 +52,15 @@ def create_text(screen, text, pos, font) -> None:
     pygame.time.delay(2000)
     pygame.event.pump()
 
+def wait_for_answer():
+    global answer
+    message = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+    answer = message
+
 def menu(screen) -> None:
     running = True
+
+    global answer
 
     screen.blit(BACKGROUND, (0, 0))
 
@@ -80,22 +90,26 @@ def menu(screen) -> None:
                             pushed = True
                             running = False
                         elif (value and obj.type == "quit"):
-                            root = tkinter.Tk()
-                            root.withdraw()
-                            answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
-                            pygame.event.pump()
-                            if answer == True:
-                                pygame.quit()
-                                sys.exit()
+                            answer = None
+                            threading.Thread(target=wait_for_answer).start()
+                            while (answer != True or answer != False):
+                                pygame.event.pump()
+                                if answer == True:
+                                    pygame.quit()
+                                    sys.exit()
+                                if answer == False:
+                                    break
 
                 if event.type == pygame.QUIT:
-                    root = tkinter.Tk()
-                    root.withdraw()
-                    answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
-                    pygame.event.pump()
-                    if answer == True:
-                        pygame.quit()
-                        sys.exit()
+                    answer = None
+                    threading.Thread(target=wait_for_answer).start()
+                    while (answer != True or answer != False):
+                        pygame.event.pump()
+                        if answer == True:
+                            pygame.quit()
+                            sys.exit()
+                        if answer == False:
+                            break
 
     pygame.event.pump()
 
