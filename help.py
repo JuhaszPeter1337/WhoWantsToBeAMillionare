@@ -44,7 +44,7 @@ def evaluate_audience(question, values) -> Dict[str, int]:
         options.remove(question.correct_answer)
         values.pop(0)
 
-        for i in range(0, 3):
+        for _ in range(3):
             answer = random.choice(options)
             number = random.choice(values)
             my_dict[answer] = number

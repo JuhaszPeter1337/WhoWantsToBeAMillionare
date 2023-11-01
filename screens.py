@@ -120,7 +120,7 @@ def description(screen) -> None:
     start_screen = Rectangular(600, 20, 580, 500, WHITE)
     start_screen.draw(screen)
 
-    for i in range(0,12):
+    for i in range(12):
         create_text(screen, texts[i], (605, (i + 1) * 40), 0)
 
     pygame.time.delay(8000)
@@ -141,7 +141,7 @@ def start(screen) -> None:
     start_screen = Rectangular(600, 20, 580, 500, WHITE)
     start_screen.draw(screen)
 
-    for i in range(0,3):
+    for i in range(3):
         if i == 0:
             create_text(screen, texts[i], (620, 40), 3)
         else:
@@ -165,7 +165,7 @@ def start(screen) -> None:
         "The game is about to begin in 5 seconds.",
         "Good luck!"
     ]
-    for i in range(0,5):
+    for i in range(5):
         create_text(screen, texts[i], (620, 50 + ((i + 3) * 60)), 1)
 
     pygame.time.delay(2000)
