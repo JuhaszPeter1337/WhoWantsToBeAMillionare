@@ -6,8 +6,17 @@ from help import *
 from button import *
 from file import quiz
 from typing import List
+import threading
 
 audience, phone, fifty = True, True, True
+
+def popup(text) -> None:
+    top = Tk() # to hide the main window
+    top.wm_withdraw()
+    messagebox.showinfo(title='Phone-a-Friend', message=text)
+    pygame.event.pump()
+    top.destroy()
+    top.mainloop()
 
 class Ellipse(Shape):
     def __init__(self, x, y, width, height, type) -> None:
@@ -52,7 +61,7 @@ class Ellipse(Shape):
             elif self.type == "phone" and phone:
                 phone = False
                 correct_answer = phone_call(question)
-                popup(correct_answer)
+                threading.Thread(target=popup(correct_answer), daemon=True).start()
                 pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
                 pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
                 pygame.display.update()
