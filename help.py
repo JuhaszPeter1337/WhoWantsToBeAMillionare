@@ -19,6 +19,7 @@ def popup(text) -> None:
     top.wm_withdraw()
     messagebox.showinfo(title='Phone-a-Friend', message=text)
     pygame.event.pump()
+    top.destroy()
 
 def use_audience(question) -> List[int]:
     if (question.option_A == '-' or question.option_B == '-' or question.option_C == '-' or question.option_D == '-'):

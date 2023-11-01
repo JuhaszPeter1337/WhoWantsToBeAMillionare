@@ -8,6 +8,7 @@ import ellipse
 from ellipse import *
 import button
 from screens import *
+import threading
 
 pygame.init()
 
@@ -20,6 +21,8 @@ money = [100, 200, 500, 700, 1000,
         64000, 125000, 250000, 500000, 1000000]
 
 my_money = 0
+
+answer = None
 
 def find_correct_answer(answer) -> int:
     number = None
@@ -40,9 +43,20 @@ def money_calc(money) -> int:
         return 1000
     if money < 1000000:
         return 32000
+    
+def wait_for_answer():
+    global answer
+    root = tkinter.Tk()
+    root.withdraw()
+    message = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+    answer = message
+    root.destroy()
+    root.mainloop()
 
 def main():
     running = True
+
+    global answer
 
     question_counter = 1
     correct_answers = 0
@@ -148,13 +162,14 @@ def main():
                                     gameover(screen, calculated_money)
 
                 elif event.type == pygame.QUIT:
-                    root = tkinter.Tk()
-                    root.withdraw()
-                    answer = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
-                    pygame.event.pump()
-                    if answer == True:
-                        pygame.quit()
-                        sys.exit()
+                    answer = None
+                    threading.Thread(target=wait_for_answer, daemon=True).start()
+                    while (answer != True or answer != False):
+                        if answer == True:
+                            pygame.quit()
+                            sys.exit()
+                        if answer == False:
+                            break
 
             pygame.event.pump()
 

@@ -189,6 +189,8 @@ def start(screen) -> None:
     pygame.time.delay(2000)
     pygame.event.pump()
 
+    my_w.destroy()
+
 def gameover(screen, money) -> None:
     screen.blit(MAN, (0, 0))
 
