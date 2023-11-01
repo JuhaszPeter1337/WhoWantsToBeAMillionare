@@ -58,7 +58,7 @@ def wait_for_answer():
     root.withdraw()
     message = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
     answer = message
-    root.mainloop()
+    root.destroy()
 
 def menu(screen) -> None:
     running = True
