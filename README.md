@@ -17,26 +17,26 @@ If you answer the question wrong, it's game over.
 
 ## Prerequisites
 
-### python3 (Linux)
+### python3
 
 ```
 sudo apt update
 sudo apt install python3 -y
 ```
 
-### pip3 (Linux)
+### pip3
 
 ```
 sudo apt install python3-pip -y
 ```
 
-### Tkinter (Linux)
+### Tkinter
 
 ```
 sudo apt-get install python3-tk -y
 ```
 
-### pygame
+### pygame-ce
 
 ```
 pip/pip3 install pygame-ce==2.2.0
@@ -48,7 +48,7 @@ pip/pip3 install pygame-ce==2.2.0
 pip/pip3 install matplotlib
 ```
 
-### pillow (only if plot does not work on Linux)
+### pillow (only if plot does not work)
 
 ```
 pip/pip3 install --upgrade pillow
