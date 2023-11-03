@@ -55,7 +55,7 @@ def wait_for_answer():
 
 def draw(objects):
     screen.blit(BACKGROUND, (0, 0))
-    
+
     for obj in objects:
         obj.draw(screen)
     

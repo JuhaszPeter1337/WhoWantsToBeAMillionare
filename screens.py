@@ -208,6 +208,7 @@ def gameover(screen, money) -> None:
 
     texts = [
         "Game over!",
+        "Unfortunately you won no money.",
         f"You won {money}$.",
         "Thank you for playing!",
         "The game is about to quit in 5 seconds.",
@@ -220,10 +221,13 @@ def gameover(screen, money) -> None:
     end_screen.draw(screen)
 
     create_text(screen, texts[0], (766, 90), 3)
-    create_text(screen, texts[1], (800 - c * 7, 175), 2)
-    create_text(screen, texts[2], (730, 250), 2)
-    create_text(screen, texts[3], (620, 325), 2)
-    create_text(screen, texts[4], (750 - len(name) * 7 , 400), 2)
+    if money == 0:
+        create_text(screen, texts[1], (660, 175), 2)
+    else:
+        create_text(screen, texts[2], (800 - c * 7, 175), 2)
+    create_text(screen, texts[3], (730, 250), 2)
+    create_text(screen, texts[4], (620, 325), 2)
+    create_text(screen, texts[5], (750 - len(name) * 7 , 400), 2)
 
     pygame.time.delay(2000)
     pygame.event.pump()
