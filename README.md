@@ -33,31 +33,31 @@ sudo apt install python3-pip -y
 ### Tkinter
 
 ```
-sudo apt-get install python3-tk -y
+sudo apt install python3-tk -y
 ```
 
 ### pygame-ce
 
 ```
-pip/pip3 install pygame-ce==2.2.0
+pip3 install pygame-ce==2.2.0
 ```
 
 ### matplotlib
 
 ```
-pip/pip3 install matplotlib
+pip3 install matplotlib
 ```
 
 ### pillow (only if plot does not work)
 
 ```
-pip/pip3 install --upgrade pillow
+pip3 install --upgrade pillow
 ```
 
 ## Start app
 
 ```
-python/python3 main.py
+python3 main.py
 ```
 
 ## Design
