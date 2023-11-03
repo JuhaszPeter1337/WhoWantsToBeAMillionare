@@ -167,11 +167,11 @@ def start(screen) -> None:
     global name
     my_w = tkinter.Tk()
     my_w.withdraw()
-    name = askstring(title='Your name', prompt='What is your name? (max 16 character long and no special characters)')
+    name = askstring(title='Your name', prompt='What is your name?\n(max 16 character long and no special characters)')
     pygame.event.pump()
     crit = meets_name_criteria(name)
     while not crit:
-        name = askstring(title='Your name', prompt='Please enter correct name! (max 16 character long and no special characters)')
+        name = askstring(title='Your name', prompt='Please enter correct name!\n(max 16 character long and no special characters)')
         new_name = meets_name_criteria(name)
         if new_name:
             crit = True
