@@ -56,6 +56,11 @@ def evaluate_audience(question, values) -> Dict[str, int]:
 
     return my_dict
 
+def addlabels(x,y):
+    x, y = list(x), list(y)
+    for i in range(len(x)):
+        plt.text(i, y[i], y[i], ha = 'center')
+
 def diagram(values) -> None:
     names = values.keys()
     val = values.values()
@@ -64,7 +69,8 @@ def diagram(values) -> None:
     plt.ylabel('Percentage (%)', fontsize=16)
     plt.xlabel('Options', fontsize=16)
     plt.bar(names, val)
-    plt.suptitle('Audience results', fontsize=20)
+    addlabels(names, val)
+    plt.title('Audience results', fontsize=20)
     plt.show()
 
 def phone_call(question) -> str:
