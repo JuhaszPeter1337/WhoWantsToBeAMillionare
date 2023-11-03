@@ -36,10 +36,10 @@ sudo apt install python3-pip -y
 sudo apt install python3-tk -y
 ```
 
-### pygame-ce
+### pygame
 
 ```
-pip3 install pygame-ce==2.2.0
+pip3 install pygame
 ```
 
 ### matplotlib

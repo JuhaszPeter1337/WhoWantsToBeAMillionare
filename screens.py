@@ -6,8 +6,6 @@ import button
 import tkinter
 from tkinter.simpledialog import askstring
 import threading
-import main
-from blur import blur
 
 # Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
 # should have root.mainloop() in there somewhere, so the gui will listen to os events (like the CloseWindow event).
@@ -97,7 +95,6 @@ def menu(screen) -> None:
                             running = False
                         elif (value and obj.type == "quit"):
                             answer = None
-                            blur(screen)
                             threading.Thread(target=wait_for_answer, daemon=True).start()
                             while (answer != True or answer != False):
                                 pygame.event.pump()
@@ -105,15 +102,10 @@ def menu(screen) -> None:
                                     pygame.quit()
                                     sys.exit()
                                 if answer == False:
-                                    screen.blit(BACKGROUND, (0, 0))
-                                    for obj in objects:
-                                        obj.draw(screen)
-                                    pygame.display.update()
                                     break
 
                 if event.type == pygame.QUIT:
                     answer = None
-                    blur(screen)
                     threading.Thread(target=wait_for_answer, daemon=True).start()
                     while (answer != True or answer != False):
                         pygame.event.pump()
@@ -121,10 +113,6 @@ def menu(screen) -> None:
                             pygame.quit()
                             sys.exit()
                         if answer == False:
-                            screen.blit(BACKGROUND, (0, 0))
-                            for obj in objects:
-                                obj.draw(screen)
-                            pygame.display.update()
                             break
 
     pygame.event.pump()
