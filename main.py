@@ -53,6 +53,29 @@ def wait_for_answer():
     root.destroy()
     root.mainloop()
 
+def draw(objects):
+    screen.blit(BACKGROUND, (0, 0))
+
+    for obj in objects:
+        obj.draw(screen)
+    
+    screen.blit(STOP, (100, 530))
+    
+    screen.blit(FIFTYFIFTY, (780, 530))
+    if not ellipse.fifty:
+        pygame.draw.line(screen, RED, (779, 535), (877, 600), width=6)
+        pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
+    
+    screen.blit(PAF, (890, 530))
+    if not ellipse.phone:
+        pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
+        pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
+    
+    screen.blit(ATA, (1000, 530))
+    if not ellipse.audience:
+        pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
+        pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
+
 def main():
     running = True
 
@@ -60,8 +83,6 @@ def main():
 
     question_counter = 1
     correct_answers = 0
-
-    screen.blit(BACKGROUND, (0, 0))
 
     while running:
         length = len(quiz)
@@ -80,24 +101,7 @@ def main():
             Ellipse(999, 535, 100, 65, "audience")
         ]
 
-        for obj in objects:
-            obj.draw(screen)
-
-        screen.blit(STOP, (100, 530))
-
-        screen.blit(FIFTYFIFTY, (780, 530))
-        if not ellipse.fifty:
-            pygame.draw.line(screen, RED, (779, 535), (877, 600), width=6)
-            pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
-        screen.blit(PAF, (890, 530))
-        if not ellipse.phone:
-            pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
-            pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
-        screen.blit(ATA, (1000, 530))
-        if not ellipse.audience:
-            pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
-            pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
-
+        draw(objects)
         pygame.display.update()
 
         answered = False
@@ -171,28 +175,7 @@ def main():
                             pygame.quit()
                             sys.exit()
                         if answer == False:
-                            screen.blit(BACKGROUND, (0, 0))
-                            
-                            for obj in objects:
-                                obj.draw(screen)
-                            
-                            screen.blit(STOP, (100, 530))
-                            
-                            screen.blit(FIFTYFIFTY, (780, 530))
-                            if not ellipse.fifty:
-                                pygame.draw.line(screen, RED, (779, 535), (877, 600), width=6)
-                                pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
-                            
-                            screen.blit(PAF, (890, 530))
-                            if not ellipse.phone:
-                                pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
-                                pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
-                            
-                            screen.blit(ATA, (1000, 530))
-                            if not ellipse.audience:
-                                pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
-                                pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
-                            
+                            draw(objects)
                             pygame.display.update()
                             break
 
