@@ -62,6 +62,8 @@ def main():
     correct_answers = 0
 
     screen.blit(BACKGROUND, (0, 0))
+    sf_blur = pygame.transform.gaussian_blur(BACKGROUND,10)
+    screen.blit(sf_blur,(0,0,1,1))
 
     while running:
         length = len(quiz)
