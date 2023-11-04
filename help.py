@@ -25,7 +25,11 @@ def use_audience(question) -> List[int]:
         diff = 100 - correct - wrong_one - wrong_two
         wrong_three = diff
         return [correct, wrong_one, wrong_two, wrong_three]
-    
+
+def checkKey(my_dict, key):
+    if key not in my_dict.keys():
+        my_dict.update({key: 0})
+
 def evaluate_audience(question, values) -> Dict[str, int]:
     options = ["A", "B", "C", "D"]
     my_dict = {}
@@ -50,6 +54,11 @@ def evaluate_audience(question, values) -> Dict[str, int]:
                 options.remove(option)
 
         my_dict[options[0]] = values[1]
+
+        checkKey(my_dict, "A")
+        checkKey(my_dict, "B")
+        checkKey(my_dict, "C")
+        checkKey(my_dict, "D")
 
     return my_dict
 
