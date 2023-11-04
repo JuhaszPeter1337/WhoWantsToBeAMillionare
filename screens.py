@@ -261,6 +261,11 @@ def winner(screen, money) -> None:
     pygame.quit()
     sys.exit()
 
+def audience_text(screen, font, text, pos):
+    font = fonts[font].render(text, False, WHITE, BLACK)
+    screen.blit(font, (pos[0], pos[1]))
+
+
 def audience_diagram(screen, numbers):
     screen.blit(AUDIENCE, (0, 0))
 
@@ -278,23 +283,15 @@ def audience_diagram(screen, numbers):
     for obj in objects:
         obj.draw(screen)
 
-    fontA = fonts[2].render(options[0], False, WHITE, BLACK)
-    fontB = fonts[2].render(options[1], False, WHITE, BLACK)
-    fontC = fonts[2].render(options[2], False, WHITE, BLACK)
-    fontD = fonts[2].render(options[3], False, WHITE, BLACK)
-    font1 = fonts[2].render(f"{str(numbers[0])}%", False, WHITE, BLACK)
-    font2 = fonts[2].render(f"{str(numbers[1])}%", False, WHITE, BLACK)
-    font3 = fonts[2].render(f"{str(numbers[2])}%", False, WHITE, BLACK)
-    font4 = fonts[2].render(f"{str(numbers[3])}%", False, WHITE, BLACK)
+    audience_text(screen, 2, options[0], (390, 825))
+    audience_text(screen, 2, options[1], (520, 825))
+    audience_text(screen, 2, options[2], (650, 825))
+    audience_text(screen, 2, options[3], (780, 825))
 
-    screen.blit(fontA, (390, 825))
-    screen.blit(fontB, (520, 825))
-    screen.blit(fontC, (650, 825))
-    screen.blit(fontD, (780, 825))
-    screen.blit(font1, (390 - (count_digits(numbers[1]) + 1) * 3, 245))
-    screen.blit(font2, (520 - (count_digits(numbers[1]) + 1) * 3, 245))
-    screen.blit(font3, (650 - (count_digits(numbers[1]) + 1) * 3, 245))
-    screen.blit(font4, (780 - (count_digits(numbers[1]) + 1) * 3, 245))
+    audience_text(screen, 2, f"{str(numbers[0])}%", (390 - (count_digits(numbers[1]) + 1) * 3, 245))
+    audience_text(screen, 2, f"{str(numbers[1])}%", (520 - (count_digits(numbers[1]) + 1) * 3, 245))
+    audience_text(screen, 2, f"{str(numbers[2])}%", (650 - (count_digits(numbers[1]) + 1) * 3, 245))
+    audience_text(screen, 2, f"{str(numbers[3])}%", (780 - (count_digits(numbers[1]) + 1) * 3, 245))
 
     screen.blit(ATA, (550, 150))
 
