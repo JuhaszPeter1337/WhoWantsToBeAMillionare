@@ -4,6 +4,7 @@ from constants import *
 from shape import *
 from help import *
 from button import *
+from screens import *
 from file import quiz
 from typing import List
 import threading
@@ -71,7 +72,5 @@ class Ellipse(Shape):
                 values = use_audience(question)
                 evaulate = evaluate_audience(question, values)
                 sorted_dict = dict(sorted(evaulate.items()))
-                diagram(sorted_dict)
-                pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
-                pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
-                pygame.display.update()
+                my_list = list(sorted_dict.values())
+                audience_diagram(screen, my_list)
