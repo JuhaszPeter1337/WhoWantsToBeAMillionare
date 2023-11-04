@@ -42,18 +42,6 @@ sudo apt install python3-tk -y
 pip3 install pygame-ce==2.2.0
 ```
 
-### matplotlib
-
-```
-pip3 install matplotlib
-```
-
-### pillow (only if plot does not work)
-
-```
-pip3 install --upgrade pillow
-```
-
 ## Start app
 
 ```
