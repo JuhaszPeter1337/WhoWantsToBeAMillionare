@@ -134,6 +134,10 @@ def main():
                                     objects[5].text = "D, " + q[3]
                                     if q[3] == "-":
                                         objects[5].enabled = False
+                            elif obj.type == "audience":
+                                obj.update(screen, quiz[rnd])
+                                draw(objects)
+                                pygame.display.update()
                             else:
                                 obj.update(screen, quiz[rnd])
 

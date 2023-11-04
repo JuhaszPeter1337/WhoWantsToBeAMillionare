@@ -3,17 +3,18 @@ from constants import *
 from shape import *
 
 class Rectangular(Shape):
-    def __init__(self, x, y, width, height, outline, text = "") -> None:
+    def __init__(self, x, y, width, height, outline, text = "", color = BLACK) -> None:
         super().__init__(x, y, width, height)
         self.outline = outline
         self.text = text
+        self.color = color
 
     def draw(self, screen) -> None:
 
         if self.outline:
             pygame.draw.rect(screen, self.outline, (self.x - 4, self.y - 4, self.width + 8, self.height + 8), 0)
 
-        pygame.draw.rect(screen, BLACK, (self.x, self.y, self.width, self.height), 0)
+        pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height), 0)
 
         if self.text != "":
             font = pygame.font.SysFont('segoeuisemibold', 30)

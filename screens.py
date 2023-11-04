@@ -248,3 +248,44 @@ def winner(screen, money) -> None:
 
     pygame.quit()
     sys.exit()
+
+def audience_diagram(screen, numbers):
+    screen.blit(AUDIENCE, (0, 0))
+
+    options = ["A", "B", "C" , "D"]
+
+    objects = [
+        Rectangular(300, 135, 600, 730, WHITE),
+        Rectangular(325, 285, 550, 525, WHITE),
+        Rectangular(355, 810 - numbers[0] * 5, 100, numbers[0] * 5, WHITE, color=BLUE),
+        Rectangular(485, 810 - numbers[1] * 5, 100, numbers[1] * 5, WHITE, color=BLUE),
+        Rectangular(615, 810 - numbers[2] * 5, 100, numbers[2] * 5, WHITE, color=BLUE),
+        Rectangular(745, 810 - numbers[3] * 5, 100, numbers[3] * 5, WHITE, color=BLUE)
+    ]
+
+    for obj in objects:
+        obj.draw(screen)
+
+    fontA = fonts[2].render(options[0], False, WHITE, BLACK)
+    fontB = fonts[2].render(options[1], False, WHITE, BLACK)
+    fontC = fonts[2].render(options[2], False, WHITE, BLACK)
+    fontD = fonts[2].render(options[3], False, WHITE, BLACK)
+    font1 = fonts[2].render(f"{str(numbers[0])}%", False, WHITE, BLACK)
+    font2 = fonts[2].render(f"{str(numbers[1])}%", False, WHITE, BLACK)
+    font3 = fonts[2].render(f"{str(numbers[2])}%", False, WHITE, BLACK)
+    font4 = fonts[2].render(f"{str(numbers[3])}%", False, WHITE, BLACK)
+
+    screen.blit(fontA, (390, 825))
+    screen.blit(fontB, (520, 825))
+    screen.blit(fontC, (650, 825))
+    screen.blit(fontD, (780, 825))
+    screen.blit(font1, (390 - (count_digits(numbers[1]) + 1) * 3, 245))
+    screen.blit(font2, (520 - (count_digits(numbers[1]) + 1) * 3, 245))
+    screen.blit(font3, (650 - (count_digits(numbers[1]) + 1) * 3, 245))
+    screen.blit(font4, (780 - (count_digits(numbers[1]) + 1) * 3, 245))
+
+    screen.blit(ATA, (550, 150))
+    
+    pygame.display.update()
+
+    pygame.time.delay(15000)

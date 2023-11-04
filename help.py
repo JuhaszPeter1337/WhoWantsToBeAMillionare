@@ -3,9 +3,6 @@ import pygame
 from tkinter import *
 from tkinter import messagebox
 from typing import List, Dict
-import matplotlib
-matplotlib.use('TkAgg')
-import matplotlib.pyplot as plt
 from question import *
 
 phone = [
@@ -55,23 +52,6 @@ def evaluate_audience(question, values) -> Dict[str, int]:
         my_dict[options[0]] = values[1]
 
     return my_dict
-
-def addlabels(x,y):
-    x, y = list(x), list(y)
-    for i in range(len(x)):
-        plt.text(i, y[i], y[i], ha = 'center')
-
-def diagram(values) -> None:
-    names = values.keys()
-    val = values.values()
-
-    plt.figure(figsize=(6, 5))
-    plt.ylabel('Percentage (%)', fontsize=16)
-    plt.xlabel('Options', fontsize=16)
-    plt.bar(names, val)
-    addlabels(names, val)
-    plt.title('Audience results', fontsize=20)
-    plt.show()
 
 def phone_call(question) -> str:
     text = random.choice(phone)
