@@ -300,6 +300,6 @@ def audience_diagram(screen, numbers):
 
     pygame.display.update()
 
-    pygame.time.delay(10000)
-
-    pygame.event.pump()
+    for _ in range(0, 10000, 1000):
+        pygame.time.delay(1000)
+        pygame.event.pump()
