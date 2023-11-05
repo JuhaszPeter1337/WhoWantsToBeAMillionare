@@ -5,9 +5,7 @@ from shape import *
 from help import *
 from button import *
 from screens import *
-from file import quiz
 from typing import List
-import threading
 
 audience, phone, fifty = True, True, True
 
@@ -61,11 +59,8 @@ class Ellipse(Shape):
 
             elif self.type == "phone" and phone:
                 phone = False
-                correct_answer = phone_call(question)
-                threading.Thread(target=popup(correct_answer), daemon=True).start()
-                pygame.draw.line(screen, RED, (889, 535), (989, 595), width=6)
-                pygame.draw.line(screen, RED, (989, 535), (889, 595), width=6)
-                pygame.display.update()
+                text, correct_answer = phone_call(question)
+                phone_screen(screen, text, correct_answer)
                 
             elif self.type == "audience" and audience:
                 audience = False

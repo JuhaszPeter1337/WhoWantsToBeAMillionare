@@ -6,9 +6,9 @@ from typing import List, Dict
 from question import *
 
 phone = [
-    "I'm not sure but I think the correct answer is...", 
-    "I am pretty sure that the answer is...", 
-    "This question is very easy, the correct answer is..."
+    "I'm not sure but I think\nthe correct answer is...", 
+    "I am pretty sure that\nthe answer is...",
+    "This question is very\neasy the answer is..."
 ]
 
 def use_audience(question) -> List[int]:
@@ -67,8 +67,8 @@ def phone_call(question) -> str:
     complete_text = f"""*ringing sound*
 Let me hear the question.
 *thinking*
-{text} {question.correct_answer}"""
-    return complete_text
+{text}"""
+    return complete_text, question.correct_answer
 
 def fifty_fifty(question) -> Question:
     options = ["A", "B", "C", "D"]
