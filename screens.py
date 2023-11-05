@@ -116,19 +116,13 @@ def menu(screen) -> None:
                                             if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
                                                 pygame.quit()
                                                 sys.exit()
+                                            if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
+                                                screen.blit(BACKGROUND, (0, 0))
+                                                for obj in objects:
+                                                    obj.draw(screen)
+                                                pygame.display.update()
+                                                pushed = True
                                     pygame.event.pump()
-
-                            while (answer != True or answer != False):
-                                pygame.event.pump()
-                                if answer == True:
-                                    pygame.quit()
-                                    sys.exit()
-                                if answer == False:
-                                    screen.blit(BACKGROUND, (0, 0))
-                                    for obj in objects:
-                                        obj.draw(screen)
-                                    pygame.display.update()
-                                    break
 
                 if event.type == pygame.QUIT:
                     answer = None
