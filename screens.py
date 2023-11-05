@@ -154,8 +154,9 @@ def description(screen) -> None:
     for i in range(12):
         create_text(screen, texts[i], (605, (i + 1) * 40), 0)
 
-    pygame.time.delay(8000)
-    pygame.event.pump()
+    for _ in range(0, 8000, 1000):
+        pygame.time.delay(1000)
+        pygame.event.pump()
 
     menu(screen)
 
