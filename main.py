@@ -8,7 +8,6 @@ import ellipse
 from ellipse import *
 import button
 from screens import *
-import threading
 
 pygame.init()
 

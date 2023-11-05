@@ -5,11 +5,9 @@ from constants import *
 import button
 import tkinter
 from tkinter.simpledialog import askstring
-import main
 from blur import blur
 
 # Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
-# should have root.mainloop() in there somewhere, so the gui will listen to os events (like the CloseWindow event).
 
 pygame.font.init()
 
@@ -81,6 +79,37 @@ def exit(screen):
                     if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
                         pygame.quit()
                         sys.exit()
+                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
+                        pushed = True
+            pygame.event.pump()
+
+def stop_game(screen, money):
+    blur(screen)
+    buttons = [
+        button.Button(559, 552, 65, 15, WHITE, "yes"),
+        button.Button(640, 552, 65, 15, WHITE, "no")
+    ]
+    for btn in buttons:
+        btn.draw(screen)
+    screen.blit(STOP_GAME, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+    pygame.display.update()
+
+    pushed = False
+    while(not pushed):
+        for event in pygame.event.get():
+            if buttons[0].isOver(pygame.mouse.get_pos()):
+                pygame.draw.rect(screen, (0, 100, 255), (555, 548, 75, 23), 2)
+                pygame.display.update()
+            elif buttons[1].isOver(pygame.mouse.get_pos()):
+                pygame.draw.rect(screen, (0, 100, 255), (635, 548, 75, 23), 2)
+                pygame.display.update()
+            else:
+                screen.blit(STOP_GAME, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+                pygame.display.update()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for btn in buttons:
+                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
+                        gameover(screen, money)
                     if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
                         pushed = True
             pygame.event.pump()

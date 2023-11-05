@@ -1,8 +1,7 @@
 import pygame
 from constants import *
-from main import gameover
 from shape import *
-import tkinter
+from screens import stop_game
 
 class Button(Shape):
     def __init__(self, x, y, width, height, outline, type, text = "", pushed = False, enabled = True) -> None:
@@ -54,8 +53,4 @@ class Button(Shape):
                     self.answer()
                     self.pushed = True
             else:
-                root = tkinter.Tk()
-                root.withdraw()
-                answer = tkinter.messagebox.askyesno(title='Stop', message="Are you sure you want to stop?")
-                if answer == True:
-                    gameover(screen, money)
+                stop_game(screen, money)
