@@ -111,7 +111,7 @@ def main():
                 global my_money
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for obj in objects:
-                        if type(obj) == button.Button:
+                        if type(obj) == button.Button and obj.enabled:
                             obj.update(screen, my_money)
                         if type(obj) == button.Button and obj.pushed and obj.enabled:
                             obj.draw(screen, answered=True)
