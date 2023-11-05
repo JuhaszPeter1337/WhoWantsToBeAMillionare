@@ -73,4 +73,7 @@ python3 main.py
 ![Alt text](repo_images/audience.JPG?raw=true "Audience") 
 ### Game over scene
 
-![Alt text](repo_images/game_over.JPG?raw=true "Game over") 
+![Alt text](repo_images/game_over.JPG?raw=true "Game over")
+### Exit scene
+
+![Alt text](repo_images/exit.JPG?raw=true "Exit") 
