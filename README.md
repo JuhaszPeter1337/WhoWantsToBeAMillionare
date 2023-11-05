@@ -62,6 +62,15 @@ python3 main.py
 ### The game
  
 ![Alt text](repo_images/game.JPG?raw=true "Game") 
+### Selection
+
+![Alt text](repo_images/select.JPG?raw=true "Selection")
+### Correct answer
+ 
+![Alt text](repo_images/correct.JPG?raw=true "Correct answer")
+### Incorrect answer
+ 
+![Alt text](repo_images/incorrect.JPG?raw=true "Incorrect answer") 
 ### Phone a friend
 
 ![Alt text](repo_images/phone.JPG?raw=true "Phone") 
