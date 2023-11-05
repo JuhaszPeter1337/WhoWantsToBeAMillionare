@@ -5,7 +5,6 @@ from constants import *
 import button
 import tkinter
 from tkinter.simpledialog import askstring
-import threading
 import main
 from blur import blur
 
@@ -54,14 +53,37 @@ def create_text(screen, text, pos, font) -> None:
     pygame.time.delay(2000)
     pygame.event.pump()
 
-def wait_for_answer():
-    global answer
-    root = tkinter.Tk()
-    root.withdraw()
-    message = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
-    answer = message
-    root.destroy()
-    root.mainloop()
+def exit(screen):
+    blur(screen)
+    buttons = [
+        button.Button(559, 552, 65, 15, WHITE, "yes"),
+        button.Button(640, 552, 65, 15, WHITE, "no")
+    ]
+    for btn in buttons:
+        btn.draw(screen)
+    screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+    pygame.display.update()
+
+    pushed = False
+    while(not pushed):
+        for event in pygame.event.get():
+            if buttons[0].isOver(pygame.mouse.get_pos()):
+                pygame.draw.rect(screen, (0, 100, 255), (555, 548, 75, 23), 2)
+                pygame.display.update()
+            elif buttons[1].isOver(pygame.mouse.get_pos()):
+                pygame.draw.rect(screen, (0, 100, 255), (635, 548, 75, 23), 2)
+                pygame.display.update()
+            else:
+                screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+                pygame.display.update()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for btn in buttons:
+                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
+                        pygame.quit()
+                        sys.exit()
+                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
+                        pushed = True
+            pygame.event.pump()
 
 def menu(screen) -> None:
     running = True
@@ -96,36 +118,18 @@ def menu(screen) -> None:
                             pushed = True
                             running = False
                         elif (value and obj.type == "quit"):
-                            answer = None
-                            blur(screen)
-                            threading.Thread(target=wait_for_answer, daemon=True).start()
-                            while (answer != True or answer != False):
-                                pygame.event.pump()
-                                if answer == True:
-                                    pygame.quit()
-                                    sys.exit()
-                                if answer == False:
-                                    screen.blit(BACKGROUND, (0, 0))
-                                    for obj in objects:
-                                        obj.draw(screen)
-                                    pygame.display.update()
-                                    break
-
-                if event.type == pygame.QUIT:
-                    answer = None
-                    blur(screen)
-                    threading.Thread(target=wait_for_answer, daemon=True).start()
-                    while (answer != True or answer != False):
-                        pygame.event.pump()
-                        if answer == True:
-                            pygame.quit()
-                            sys.exit()
-                        if answer == False:
+                            exit(screen)
                             screen.blit(BACKGROUND, (0, 0))
                             for obj in objects:
                                 obj.draw(screen)
                             pygame.display.update()
-                            break
+
+                if event.type == pygame.QUIT:
+                    exit(screen)
+                    screen.blit(BACKGROUND, (0, 0))
+                    for obj in objects:
+                        obj.draw(screen)
+                    pygame.display.update()
 
     pygame.event.pump()
 
@@ -153,8 +157,9 @@ def description(screen) -> None:
     for i in range(12):
         create_text(screen, texts[i], (605, (i + 1) * 40), 0)
 
-    pygame.time.delay(8000)
-    pygame.event.pump()
+    for _ in range(0, 8000, 1000):
+        pygame.time.delay(1000)
+        pygame.event.pump()
 
     menu(screen)
 
