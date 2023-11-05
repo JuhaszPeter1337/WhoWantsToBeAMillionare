@@ -5,7 +5,6 @@ from constants import *
 import button
 import tkinter
 from tkinter.simpledialog import askstring
-import threading
 import main
 from blur import blur
 
@@ -54,16 +53,7 @@ def create_text(screen, text, pos, font) -> None:
     pygame.time.delay(2000)
     pygame.event.pump()
 
-def wait_for_answer():
-    global answer
-    root = tkinter.Tk()
-    root.withdraw()
-    message = tkinter.messagebox.askyesno(title='Quit', message="Are you sure you want to quit?")
-    answer = message
-    root.destroy()
-    root.mainloop()
-
-def exit(screen, objects):
+def exit(screen):
     blur(screen)
     buttons = [
         button.Button(559, 552, 65, 15, WHITE, "yes"),
@@ -92,10 +82,6 @@ def exit(screen, objects):
                         pygame.quit()
                         sys.exit()
                     if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
-                        screen.blit(BACKGROUND, (0, 0))
-                        for obj in objects:
-                            obj.draw(screen)
-                        pygame.display.update()
                         pushed = True
             pygame.event.pump()
 
@@ -132,10 +118,18 @@ def menu(screen) -> None:
                             pushed = True
                             running = False
                         elif (value and obj.type == "quit"):
-                            exit(screen, objects)
+                            exit(screen)
+                            screen.blit(BACKGROUND, (0, 0))
+                            for obj in objects:
+                                obj.draw(screen)
+                            pygame.display.update()
 
                 if event.type == pygame.QUIT:
-                    exit(screen, objects)
+                    exit(screen)
+                    screen.blit(BACKGROUND, (0, 0))
+                    for obj in objects:
+                        obj.draw(screen)
+                    pygame.display.update()
 
     pygame.event.pump()
 

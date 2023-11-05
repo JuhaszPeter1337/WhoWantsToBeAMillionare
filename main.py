@@ -75,6 +75,8 @@ def draw(objects):
     if not ellipse.audience:
         pygame.draw.line(screen, RED, (999, 535), (1099, 595), width=6)
         pygame.draw.line(screen, RED, (1099, 535), (999, 595), width=6)
+    
+    pygame.display.update()
 
 def main():
     running = True
@@ -136,7 +138,6 @@ def main():
                             elif obj.type == "audience":
                                 obj.update(screen, quiz[rnd])
                                 draw(objects)
-                                pygame.display.update()
                             else:
                                 obj.update(screen, quiz[rnd])
 
@@ -170,18 +171,8 @@ def main():
                                     gameover(screen, calculated_money)
 
                 elif event.type == pygame.QUIT:
-                    answer = None
-                    blur(screen)
-                    threading.Thread(target=wait_for_answer, daemon=True).start()
-                    while (answer != True or answer != False):
-                        pygame.event.pump()
-                        if answer == True:
-                            pygame.quit()
-                            sys.exit()
-                        if answer == False:
-                            draw(objects)
-                            pygame.display.update()
-                            break
+                    exit(screen)
+                    draw(objects)
 
             pygame.event.pump()
 
