@@ -19,7 +19,9 @@ fonts = [
     pygame.font.Font('freesansbold.ttf', 20),
     pygame.font.Font('freesansbold.ttf', 26),
     pygame.font.Font('freesansbold.ttf', 28),
-    pygame.font.Font('freesansbold.ttf', 40)
+    pygame.font.Font('freesansbold.ttf', 40),
+    pygame.font.Font('freesansbold.ttf', 30),
+    pygame.font.Font('freesansbold.ttf', 45)
 ]
 
 def meets_name_criteria(your_name) -> bool:
@@ -331,6 +333,27 @@ def audience_diagram(screen, numbers):
 
     pygame.display.update()
 
-    for _ in range(0, 10000, 1000):
+    for _ in range(0, 15000, 1000):
+        pygame.time.delay(1000)
+        pygame.event.pump()
+
+def phone_screen(screen, text, correct_answer):
+    screen.blit(PHONE, (0, 0))
+    screen.blit(BUBBLE, (465,0))
+
+    font = fonts[4]
+    font2 = fonts[5]
+
+    opening = font.render(text, True, BLACK)
+    opening.set_alpha(127)
+
+    answer = font2.render(f"{correct_answer}", True, RED)
+    
+    screen.blit(opening, (525, 80))
+    screen.blit(answer, (680, 250))
+    
+    pygame.display.update()
+    
+    for _ in range(0, 15000, 1000):
         pygame.time.delay(1000)
         pygame.event.pump()

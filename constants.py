@@ -5,6 +5,9 @@ WIDTH, HEIGHT = 1200, 1000
 BACKGROUND = pygame.image.load("images/bg.jpg")
 MAN = pygame.image.load("images/person.png")
 AUDIENCE = pygame.transform.scale(pygame.image.load("images/audience.png"), (WIDTH, HEIGHT))
+PHONE = pygame.image.load("images/phone.jpg")
+
+BUBBLE = pygame.transform.scale(pygame.image.load("images/bubble.png"), (460, 410))
 
 FIFTYFIFTY =  pygame.transform.scale(pygame.image.load("images/Classic5050.webp"), (97,72))
 PAF = pygame.transform.scale(pygame.image.load("images/ClassicPAF.webp"), (97,72))
