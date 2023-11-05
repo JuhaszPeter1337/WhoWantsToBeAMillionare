@@ -77,6 +77,15 @@ def exit(screen, objects):
     pushed = False
     while(not pushed):
         for event in pygame.event.get():
+            if buttons[0].isOver(pygame.mouse.get_pos()):
+                pygame.draw.rect(screen, (0, 100, 255), (555, 548, 75, 23), 2)
+                pygame.display.update()
+            elif buttons[1].isOver(pygame.mouse.get_pos()):
+                pygame.draw.rect(screen, (0, 100, 255), (635, 548, 75, 23), 2)
+                pygame.display.update()
+            else:
+                screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+                pygame.display.update()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for btn in buttons:
                     if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
