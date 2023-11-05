@@ -12,6 +12,8 @@ ATA = pygame.transform.scale(pygame.image.load("images/ClassicATA.webp"), (97,72
 
 STOP = pygame.transform.scale(pygame.image.load("images/stop.png"), (150,70))
 
+QUIT = pygame.image.load("images/quit.JPG")
+
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 BLUE = (0,128,255)

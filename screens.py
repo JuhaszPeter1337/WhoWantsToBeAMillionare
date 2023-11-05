@@ -58,7 +58,7 @@ def wait_for_answer():
     global answer
     root = tkinter.Tk()
     root.withdraw()
-    message = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
+    message = tkinter.messagebox.askyesno(title='Quit', message="Are you sure you want to quit?")
     answer = message
     root.destroy()
     root.mainloop()
@@ -98,7 +98,26 @@ def menu(screen) -> None:
                         elif (value and obj.type == "quit"):
                             answer = None
                             blur(screen)
-                            threading.Thread(target=wait_for_answer, daemon=True).start()
+                            #threading.Thread(target=wait_for_answer, daemon=True).start()
+                            buttons = [
+                                button.Button(559, 552, 65, 15, WHITE, "yes"),
+                                button.Button(640, 552, 65, 15, WHITE, "no")
+                            ]
+                            for btn in buttons:
+                                btn.draw(screen)
+                            screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+                            pygame.display.update()
+
+                            pushed = False
+                            while(not pushed):
+                                for event in pygame.event.get():
+                                    if event.type == pygame.MOUSEBUTTONDOWN:
+                                        for btn in buttons:
+                                            if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
+                                                pygame.quit()
+                                                sys.exit()
+                                    pygame.event.pump()
+
                             while (answer != True or answer != False):
                                 pygame.event.pump()
                                 if answer == True:
@@ -114,7 +133,9 @@ def menu(screen) -> None:
                 if event.type == pygame.QUIT:
                     answer = None
                     blur(screen)
-                    threading.Thread(target=wait_for_answer, daemon=True).start()
+                    #threading.Thread(target=wait_for_answer, daemon=True).start()
+                    screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+                    pygame.display.update()
                     while (answer != True or answer != False):
                         pygame.event.pump()
                         if answer == True:
