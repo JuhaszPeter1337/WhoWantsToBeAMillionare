@@ -333,7 +333,7 @@ def audience_diagram(screen, numbers):
 
     pygame.display.update()
 
-    for _ in range(0, 10000, 1000):
+    for _ in range(0, 20000, 1000):
         pygame.time.delay(1000)
         pygame.event.pump()
 
@@ -354,6 +354,6 @@ def phone_screen(screen, text, correct_answer):
     
     pygame.display.update()
     
-    for _ in range(0, 15000, 1000):
+    for _ in range(0, 20000, 1000):
         pygame.time.delay(1000)
         pygame.event.pump()
