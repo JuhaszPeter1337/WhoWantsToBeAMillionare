@@ -63,6 +63,33 @@ def wait_for_answer():
     root.destroy()
     root.mainloop()
 
+def exit(screen, objects):
+    blur(screen)
+    buttons = [
+        button.Button(559, 552, 65, 15, WHITE, "yes"),
+        button.Button(640, 552, 65, 15, WHITE, "no")
+    ]
+    for btn in buttons:
+        btn.draw(screen)
+    screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+    pygame.display.update()
+
+    pushed = False
+    while(not pushed):
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for btn in buttons:
+                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
+                        pygame.quit()
+                        sys.exit()
+                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
+                        screen.blit(BACKGROUND, (0, 0))
+                        for obj in objects:
+                            obj.draw(screen)
+                        pygame.display.update()
+                        pushed = True
+            pygame.event.pump()
+
 def menu(screen) -> None:
     running = True
 
@@ -96,51 +123,10 @@ def menu(screen) -> None:
                             pushed = True
                             running = False
                         elif (value and obj.type == "quit"):
-                            answer = None
-                            blur(screen)
-                            #threading.Thread(target=wait_for_answer, daemon=True).start()
-                            buttons = [
-                                button.Button(559, 552, 65, 15, WHITE, "yes"),
-                                button.Button(640, 552, 65, 15, WHITE, "no")
-                            ]
-                            for btn in buttons:
-                                btn.draw(screen)
-                            screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
-                            pygame.display.update()
-
-                            pushed = False
-                            while(not pushed):
-                                for event in pygame.event.get():
-                                    if event.type == pygame.MOUSEBUTTONDOWN:
-                                        for btn in buttons:
-                                            if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
-                                                pygame.quit()
-                                                sys.exit()
-                                            if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
-                                                screen.blit(BACKGROUND, (0, 0))
-                                                for obj in objects:
-                                                    obj.draw(screen)
-                                                pygame.display.update()
-                                                pushed = True
-                                    pygame.event.pump()
+                            exit(screen, objects)
 
                 if event.type == pygame.QUIT:
-                    answer = None
-                    blur(screen)
-                    #threading.Thread(target=wait_for_answer, daemon=True).start()
-                    screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
-                    pygame.display.update()
-                    while (answer != True or answer != False):
-                        pygame.event.pump()
-                        if answer == True:
-                            pygame.quit()
-                            sys.exit()
-                        if answer == False:
-                            screen.blit(BACKGROUND, (0, 0))
-                            for obj in objects:
-                                obj.draw(screen)
-                            pygame.display.update()
-                            break
+                    exit(screen, objects)
 
     pygame.event.pump()
 
