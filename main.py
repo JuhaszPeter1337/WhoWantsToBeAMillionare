@@ -42,15 +42,6 @@ def money_calc(money) -> int:
         return 1000
     if money < 1000000:
         return 32000
-    
-def wait_for_answer():
-    global answer
-    root = tkinter.Tk()
-    root.withdraw()
-    message = tkinter.messagebox.askyesno(title='Exit', message="Are you sure you want to quit?")
-    answer = message
-    root.destroy()
-    root.mainloop()
 
 def draw(objects):
     screen.blit(BACKGROUND, (0, 0))
