@@ -377,7 +377,7 @@ def input_name(screen) -> None:
     audience_text(screen, 2, "If you press ENTER you can't change", (615, 405))
     audience_text(screen, 2, "your game name anymore!", (615, 455))
 
-    input_rect = pygame.Rect(615, 290, 555, 40)
+    input_rect = pygame.Rect(615, 290, 550, 40)
     user_text = ""
 
     pushed = False
@@ -386,9 +386,24 @@ def input_name(screen) -> None:
   
             # if user types QUIT then the screen will close 
             if event.type == pygame.QUIT: 
-                pygame.quit() 
-                sys.exit() 
-    
+                popup(screen, QUIT, "exit")
+                screen.blit(BACKGROUND, (0, 0))
+                screen.blit(MAN, (0, 0))
+                start_screen = Rectangular(600, 20, 580, 500, WHITE)
+                start_screen.draw(screen)
+
+                audience_text(screen, 2, "Please enter your name under the white", (615, 40))
+                audience_text(screen, 2, "box. The requirements: ", (615, 90))
+                audience_text(screen, 2, "- max 16 character long", (615, 140))
+                audience_text(screen, 2, "- no special characters like !, #, @, etc.", (615, 190))
+                audience_text(screen, 2, "Just start typing your name!", (615, 240))
+                audience_text(screen, 2, "Press ENTER if you are done!", (615, 355))
+                audience_text(screen, 2, "If you press ENTER you can't change", (615, 405))
+                audience_text(screen, 2, "your game name anymore!", (615, 455))
+
+                input_rect = pygame.Rect(615, 290, 550, 40)
+                pygame.display.update()
+
             if event.type == pygame.KEYDOWN: 
     
                 # Check for backspace 
