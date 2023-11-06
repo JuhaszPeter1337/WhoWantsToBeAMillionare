@@ -62,12 +62,14 @@ def evaluate_audience(question, values) -> Dict[str, int]:
 
     return my_dict
 
-def phone_call(question) -> str:
+def phone_call(question) -> tuple:
     text = random.choice(phone)
-    complete_text = f"""*ringing sound*
-Let me hear the question.
-*thinking*
-{text}"""
+    complete_text = [
+        "*ringing sound*",
+        "Let me hear the question.",
+        "*thinking*",
+        text
+    ]
     return complete_text, question.correct_answer
 
 def fifty_fifty(question) -> Question:

@@ -313,24 +313,31 @@ def audience_diagram(screen, numbers) -> None:
         pygame.time.delay(1000)
         pygame.event.pump()
 
+def phone_text(screen, text, pos, last = False) -> None:
+    font1 = fonts[4]
+    font2 = fonts[5]
+
+    if last: 
+        txt = font2.render(text, True, RED)
+    else:
+        txt = font1.render(text, True, (58, 59, 60))
+
+    screen.blit(txt, (pos[0], pos[1]))
+    pygame.display.update()
+    pygame.time.delay(3000)
+    pygame.event.pump()
+
 def phone_screen(screen, text, correct_answer) -> None:
     screen.blit(PHONE, (0, 0))
     screen.blit(BUBBLE, (465,0))
 
-    font = fonts[4]
-    font2 = fonts[5]
+    phone_text(screen, text[0], (525, 80))
+    phone_text(screen, text[1], (525, 115))
+    phone_text(screen, text[2], (525, 150))
+    phone_text(screen, text[3], (525, 185))
+    phone_text(screen, f"{correct_answer}", (680, 250), last = True)
 
-    opening = font.render(text, True, BLACK)
-    opening.set_alpha(127)
-
-    answer = font2.render(f"{correct_answer}", True, RED)
-    
-    screen.blit(opening, (525, 80))
-    screen.blit(answer, (680, 250))
-    
-    pygame.display.update()
-    
-    for _ in range(0, 15000, 1000):
+    for _ in range(0, 3000, 1000):
         pygame.time.delay(1000)
         pygame.event.pump()
 
