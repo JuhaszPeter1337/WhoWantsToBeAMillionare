@@ -296,7 +296,7 @@ def audience_diagram(screen, numbers) -> None:
     for i in range(5000, 0, -1000):
         screen.blit(AUDIENCE, (0, 0))
         txt = font.render(str(i // 1000), True, BLUE)
-        screen.blit(txt, (WIDTH / 2 - 28, 15))
+        screen.blit(txt, (WIDTH / 2 - 28, 25))
         for i in range(2):
             objects[i].draw(screen)
 

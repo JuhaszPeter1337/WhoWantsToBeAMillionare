@@ -25,4 +25,4 @@ def add_score(scores, name, score) -> list:
 def write_scores(file_path, scores) -> None:
     with open(file_path, 'w') as file:
         for score in scores:
-            file.write(f"{score} + '\n'")
+            file.write(f"{score}\n")

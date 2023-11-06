@@ -138,8 +138,9 @@ def main():
                                     obj.correct()
                                     obj.draw(screen, answered=True, correct=True)
                                     pygame.display.update()
-                                    pygame.time.delay(3000)
-                                    pygame.event.pump()
+                                    for _ in range(0, 3000, 1000):
+                                        pygame.time.delay(1000)
+                                        pygame.event.pump()
                                     if question_counter < 15 and correct_answers < 14:
                                         question_counter += 1
                                         correct_answers += 1
@@ -155,8 +156,9 @@ def main():
                                     objects[number].outline = ORANGE
                                     objects[number].draw(screen, answered=True, incorrect=False)
                                     pygame.display.update()
-                                    pygame.time.delay(5000)
-                                    pygame.event.pump()
+                                    for _ in range(0, 5000, 1000):
+                                        pygame.time.delay(1000)
+                                        pygame.event.pump()
                                     calculated_money = money_calc(my_money)
                                     gameover(screen, calculated_money)
 
