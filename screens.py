@@ -356,11 +356,11 @@ def input_name(screen):
     audience_text(screen, 2, "Please enter your name under the white", (615, 40))
     audience_text(screen, 2, "box. The requirements: ", (615, 90))
     audience_text(screen, 2, "- max 16 character long", (615, 140))
-    audience_text(screen, 2, "- no special characters", (615, 190))
+    audience_text(screen, 2, "- no special characters like !, #, @, etc.", (615, 190))
     audience_text(screen, 2, "Just start typing your name!", (615, 240))
-    audience_text(screen, 2, "Press ENTER if you are done!", (615, 360))
-    audience_text(screen, 2, "If you press ENTER you can't change", (615, 410))
-    audience_text(screen, 2, "your game name anymore!", (615, 460))
+    audience_text(screen, 2, "Press ENTER if you are done!", (615, 355))
+    audience_text(screen, 2, "If you press ENTER you can't change", (615, 405))
+    audience_text(screen, 2, "your game name anymore!", (615, 455))
 
     input_rect = pygame.Rect(615, 290, 555, 40)
     user_text = ""
