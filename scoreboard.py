@@ -18,7 +18,9 @@ def add_score(scores, name, score) -> list:
     scores.sort(key=lambda x: -int(x.split(':')[1].strip('$')))
     if(len(scores) > 20):
         top_20 = scores[:20]
-    return top_20
+        return top_20
+    else:
+        return scores
 
 def write_scores(file_path, scores) -> None:
     with open(file_path, 'w') as file:
