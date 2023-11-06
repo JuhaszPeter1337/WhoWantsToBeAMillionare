@@ -52,7 +52,6 @@ python3 main.py
 ![Alt text](repo_images/description.png?raw=true "Description")
 ### Input name
 
-![Alt text](repo_images/name.JPG?raw=true "Name")
 ### Starting screen
 
 ![Alt text](repo_images/start_screen.JPG?raw=true "Starting screen")
