@@ -12,12 +12,12 @@ def read_scores(scoreboard) -> List:
             scores.append(line.strip())
     return scores
 
-def add_score(scores, name, score):
+def add_score(scores, name, score) -> None:
     new_score = f"{name}: {score}$"
     scores.append(new_score)
     scores.sort(key=lambda x: -int(x.split(':')[1].strip('$')))
 
-def write_scores(file_path, scores):
+def write_scores(file_path, scores) -> None:
     with open(file_path, 'w') as file:
         for score in scores:
             file.write(score + '\n')

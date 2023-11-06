@@ -301,12 +301,12 @@ def winner(screen, money) -> None:
     pygame.quit()
     sys.exit()
 
-def audience_text(screen, font, text, pos):
+def audience_text(screen, font, text, pos) -> None:
     font = fonts[font].render(text, False, WHITE, BLACK)
     screen.blit(font, (pos[0], pos[1]))
 
 
-def audience_diagram(screen, numbers):
+def audience_diagram(screen, numbers) -> None:
     screen.blit(AUDIENCE, (0, 0))
 
     options = ["A", "B", "C" , "D"]
@@ -341,7 +341,7 @@ def audience_diagram(screen, numbers):
         pygame.time.delay(1000)
         pygame.event.pump()
 
-def phone_screen(screen, text, correct_answer):
+def phone_screen(screen, text, correct_answer) -> None:
     screen.blit(PHONE, (0, 0))
     screen.blit(BUBBLE, (465,0))
 
@@ -362,7 +362,7 @@ def phone_screen(screen, text, correct_answer):
         pygame.time.delay(1000)
         pygame.event.pump()
 
-def input_name(screen):
+def input_name(screen) -> None:
     global name
     screen.blit(MAN, (0, 0))
     start_screen = Rectangular(600, 20, 580, 500, WHITE)
