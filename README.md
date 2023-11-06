@@ -15,6 +15,8 @@ You can stop and finish the game whenever you want to. Your money will be the pr
 
 If you answer the question wrong, it's game over.
 
+The top 20 scores are stored in scoreboard.txt with names.
+
 ## Prerequisites
 
 ### python3
