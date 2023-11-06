@@ -4,6 +4,7 @@ from rectangular import *
 from constants import *
 import button
 from blur import blur
+from scoreboard import *
 
 # Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
 
@@ -236,6 +237,7 @@ def gameover(screen, money) -> None:
         "Unfortunately you won no money.",
         f"You won {money}$.",
         "Thank you for playing!",
+        "Scores can be found in scoreboard.txt.",
         "The game is about to quit in 5 seconds.",
         f"See you soon, bye {name}!"
     ]
@@ -245,14 +247,19 @@ def gameover(screen, money) -> None:
     end_screen = Rectangular(600, 20, 580, 500, WHITE)
     end_screen.draw(screen)
 
-    create_text(screen, texts[0], (766, 90), 3)
+    create_text(screen, texts[0], (766, 50), 3)
     if money == 0:
-        create_text(screen, texts[1], (660, 175), 2)
+        create_text(screen, texts[1], (660, 135), 2)
     else:
-        create_text(screen, texts[2], (800 - c * 7, 175), 2)
-    create_text(screen, texts[3], (730, 250), 2)
-    create_text(screen, texts[4], (620, 325), 2)
-    create_text(screen, texts[5], (750 - len(name) * 7 , 400), 2)
+        create_text(screen, texts[2], (800 - c * 7, 135), 2)
+    create_text(screen, texts[3], (730, 210), 2)
+    create_text(screen, texts[4], (625, 285), 2)
+    create_text(screen, texts[5], (620, 360), 2)
+    create_text(screen, texts[6], (750 - len(name) * 7 , 435), 2)
+
+    scores = read_scores(scoreboard)
+    add_score(scores, name, money)
+    write_scores(scoreboard, scores)
 
     pygame.time.delay(2000)
     pygame.event.pump()
@@ -267,6 +274,7 @@ def winner(screen, money) -> None:
         "The game has ended. You won!",
         f"Your prize is {money}$.",
         "Thank you for playing!",
+        "Scores can be found in scoreboard.txt.",
         "The game is about to quit in 5 seconds.",
         "See you soon, bye!"
     ]
@@ -274,11 +282,18 @@ def winner(screen, money) -> None:
     end_screen = Rectangular(600, 20, 580, 500, WHITE)
     end_screen.draw(screen)
 
-    create_text(screen, texts[0], (680, 100), 2)
-    create_text(screen, texts[1], (723, 175), 2)
-    create_text(screen, texts[2], (730, 250), 2)
-    create_text(screen, texts[3], (620, 325), 2)
-    create_text(screen, texts[4], (750, 400), 2)
+    c = count_digits(money)
+
+    create_text(screen, texts[0], (660, 50), 2)
+    create_text(screen, texts[1], (775 - c * 7, 135), 2)
+    create_text(screen, texts[2], (730, 210), 2)
+    create_text(screen, texts[3], (625, 285), 2)
+    create_text(screen, texts[4], (620, 360), 2)
+    create_text(screen, texts[5], (750, 435), 2)
+
+    scores = read_scores(scoreboard)
+    add_score(scores, name, money)
+    write_scores(scoreboard, scores)
 
     pygame.time.delay(2000)
     pygame.event.pump()
