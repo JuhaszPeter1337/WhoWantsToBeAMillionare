@@ -20,7 +20,8 @@ fonts = [
     pygame.font.Font('freesansbold.ttf', 28),
     pygame.font.Font('freesansbold.ttf', 40),
     pygame.font.Font('freesansbold.ttf', 30),
-    pygame.font.Font('freesansbold.ttf', 45)
+    pygame.font.Font('freesansbold.ttf', 45),
+    pygame.font.Font('freesansbold.ttf', 80)
 ]
 
 def meets_name_criteria(your_name) -> bool:
@@ -279,8 +280,6 @@ def audience_text(screen, font, text, pos) -> None:
 
 
 def audience_diagram(screen, numbers) -> None:
-    screen.blit(AUDIENCE, (0, 0))
-
     options = ["A", "B", "C" , "D"]
 
     objects = [
@@ -291,6 +290,28 @@ def audience_diagram(screen, numbers) -> None:
         Rectangular(615, 810 - numbers[2] * 5, 100, numbers[2] * 5, WHITE, color=BLUE),
         Rectangular(745, 810 - numbers[3] * 5, 100, numbers[3] * 5, WHITE, color=BLUE)
     ]
+
+    font = fonts[6]
+    
+    for i in range(5000, 0, -1000):
+        screen.blit(AUDIENCE, (0, 0))
+        txt = font.render(str(i // 1000), True, BLUE)
+        screen.blit(txt, (WIDTH / 2 - 28, 15))
+        for i in range(2):
+            objects[i].draw(screen)
+
+        screen.blit(ATA, (550, 150))
+
+        audience_text(screen, 2, options[0], (390, 825))
+        audience_text(screen, 2, options[1], (520, 825))
+        audience_text(screen, 2, options[2], (650, 825))
+        audience_text(screen, 2, options[3], (780, 825))
+
+        pygame.display.update()
+        pygame.time.delay(1000)
+        pygame.event.pump()
+
+    screen.blit(AUDIENCE, (0, 0))
 
     for obj in objects:
         obj.draw(screen)
@@ -309,7 +330,7 @@ def audience_diagram(screen, numbers) -> None:
 
     pygame.display.update()
 
-    for _ in range(0, 15000, 1000):
+    for _ in range(0, 8000, 1000):
         pygame.time.delay(1000)
         pygame.event.pump()
 
