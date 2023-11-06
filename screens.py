@@ -230,8 +230,8 @@ def gameover(screen, money) -> None:
     create_text(screen, texts[6], (750 - len(name) * 7 , 435), 2)
 
     scores = read_scores(scoreboard)
-    add_score(scores, name, money)
-    write_scores(scoreboard, scores)
+    top = add_score(scores, name, money)
+    write_scores(scoreboard, top)
 
     pygame.time.delay(2000)
     pygame.event.pump()
@@ -264,8 +264,8 @@ def winner(screen, money) -> None:
     create_text(screen, texts[5], (750, 435), 2)
 
     scores = read_scores(scoreboard)
-    add_score(scores, name, money)
-    write_scores(scoreboard, scores)
+    top = add_score(scores, name, money)
+    write_scores(scoreboard, top)
 
     pygame.time.delay(2000)
     pygame.event.pump()
