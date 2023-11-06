@@ -161,7 +161,7 @@ def main():
                                     gameover(screen, calculated_money)
 
                 elif event.type == pygame.QUIT:
-                    exit(screen)
+                    popup(screen, QUIT, "exit")
                     draw(objects)
 
             pygame.event.pump()

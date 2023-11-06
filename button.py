@@ -1,7 +1,7 @@
 import pygame
 from constants import *
 from shape import *
-from screens import stop_game
+from screens import popup
 
 class Button(Shape):
     def __init__(self, x, y, width, height, outline, type, text = "", pushed = False, enabled = True) -> None:
@@ -53,4 +53,4 @@ class Button(Shape):
                     self.answer()
                     self.pushed = True
             else:
-                stop_game(screen, money)
+                popup(screen, STOP_GAME, "stop", money)

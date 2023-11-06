@@ -52,7 +52,7 @@ def create_text(screen, text, pos, font) -> None:
     pygame.time.delay(2000)
     pygame.event.pump()
 
-def exit(screen):
+def popup(screen, image, text, money = None ):
     blur(screen)
     buttons = [
         button.Button(559, 552, 65, 15, WHITE, "yes"),
@@ -60,9 +60,8 @@ def exit(screen):
     ]
     for btn in buttons:
         btn.draw(screen)
-    screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+    screen.blit(image, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
     pygame.display.update()
-
     pushed = False
     while(not pushed):
         for event in pygame.event.get():
@@ -73,44 +72,17 @@ def exit(screen):
                 pygame.draw.rect(screen, (0, 100, 255), (635, 548, 75, 23), 2)
                 pygame.display.update()
             else:
-                screen.blit(QUIT, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
+                screen.blit(image, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
                 pygame.display.update()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for btn in buttons:
-                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
-                        pygame.quit()
-                        sys.exit()
-                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
-                        pushed = True
-            pygame.event.pump()
-
-def stop_game(screen, money):
-    blur(screen)
-    buttons = [
-        button.Button(559, 552, 65, 15, WHITE, "yes"),
-        button.Button(640, 552, 65, 15, WHITE, "no")
-    ]
-    for btn in buttons:
-        btn.draw(screen)
-    screen.blit(STOP_GAME, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
-    pygame.display.update()
-
-    pushed = False
-    while(not pushed):
-        for event in pygame.event.get():
-            if buttons[0].isOver(pygame.mouse.get_pos()):
-                pygame.draw.rect(screen, (0, 100, 255), (555, 548, 75, 23), 2)
-                pygame.display.update()
-            elif buttons[1].isOver(pygame.mouse.get_pos()):
-                pygame.draw.rect(screen, (0, 100, 255), (635, 548, 75, 23), 2)
-                pygame.display.update()
-            else:
-                screen.blit(STOP_GAME, (WIDTH / 2 - 125, HEIGHT / 2 - 70))
-                pygame.display.update()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                for btn in buttons:
-                    if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
-                        gameover(screen, money)
+                    if text == "exit":
+                        if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
+                            pygame.quit()
+                            sys.exit()
+                    else:
+                        if btn.isOver(pygame.mouse.get_pos()) and btn.type == "yes":
+                            gameover(screen, money)
                     if btn.isOver(pygame.mouse.get_pos()) and btn.type == "no":
                         pushed = True
             pygame.event.pump()
@@ -148,14 +120,14 @@ def menu(screen) -> None:
                             pushed = True
                             running = False
                         elif (value and obj.type == "quit"):
-                            exit(screen)
+                            popup(screen, QUIT, "exit")
                             screen.blit(BACKGROUND, (0, 0))
                             for obj in objects:
                                 obj.draw(screen)
                             pygame.display.update()
 
                 if event.type == pygame.QUIT:
-                    exit(screen)
+                    popup(screen, QUIT, "exit")
                     screen.blit(BACKGROUND, (0, 0))
                     for obj in objects:
                         obj.draw(screen)
