@@ -231,7 +231,9 @@ def gameover(screen, money) -> None:
     create_text(screen, texts[6], (750 - len(name) * 7 , 435), 2)
 
     scores = read_scores(scoreboard)
-    top = add_score(scores, name, money)
+    tmp = modify_scores(scores)
+    top = add_score(tmp, name, money)
+    create_list(top)
     write_scores(scoreboard, top)
 
     pygame.time.delay(2000)
