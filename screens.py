@@ -3,8 +3,6 @@ import sys
 from rectangular import *
 from constants import *
 import button
-import tkinter
-from tkinter.simpledialog import askstring
 from blur import blur
 
 # Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
@@ -196,6 +194,10 @@ def description(screen) -> None:
 
 
 def start(screen) -> None:
+    input_name(screen)
+
+    global name
+
     screen.blit(MAN, (0, 0))
 
     texts = [
@@ -212,17 +214,6 @@ def start(screen) -> None:
             create_text(screen, texts[i], (620, 40), 3)
         else:
             create_text(screen, texts[i], (620, 50 + (i * 60)), 1)
-    global name
-    my_w = tkinter.Tk()
-    my_w.withdraw()
-    name = askstring(title='Your name', prompt='What is your name?\n(max 16 character long and no special characters)')
-    pygame.event.pump()
-    crit = meets_name_criteria(name)
-    while not crit:
-        name = askstring(title='Your name', prompt='Please enter correct name!\n(max 16 character long and no special characters)')
-        new_name = meets_name_criteria(name)
-        if new_name:
-            crit = True
 
     texts = [
         f"Welcome {name}!",
@@ -236,8 +227,6 @@ def start(screen) -> None:
 
     pygame.time.delay(2000)
     pygame.event.pump()
-
-    my_w.destroy()
 
 def gameover(screen, money) -> None:
     screen.blit(MAN, (0, 0))
@@ -357,3 +346,56 @@ def phone_screen(screen, text, correct_answer):
     for _ in range(0, 15000, 1000):
         pygame.time.delay(1000)
         pygame.event.pump()
+
+def input_name(screen):
+    global name
+    screen.blit(MAN, (0, 0))
+    start_screen = Rectangular(600, 20, 580, 500, WHITE)
+    start_screen.draw(screen)
+
+    audience_text(screen, 2, "Please enter your name under the white", (615, 40))
+    audience_text(screen, 2, "box. The requirements: ", (615, 90))
+    audience_text(screen, 2, "- max 16 character long", (615, 140))
+    audience_text(screen, 2, "- no special characters like !, #, @, etc.", (615, 190))
+    audience_text(screen, 2, "Just start typing your name!", (615, 240))
+    audience_text(screen, 2, "Press ENTER if you are done!", (615, 355))
+    audience_text(screen, 2, "If you press ENTER you can't change", (615, 405))
+    audience_text(screen, 2, "your game name anymore!", (615, 455))
+
+    input_rect = pygame.Rect(615, 290, 555, 40)
+    user_text = ""
+
+    pushed = False
+    while not pushed:
+        for event in pygame.event.get(): 
+  
+            # if user types QUIT then the screen will close 
+            if event.type == pygame.QUIT: 
+                pygame.quit() 
+                sys.exit() 
+    
+            if event.type == pygame.KEYDOWN: 
+    
+                # Check for backspace 
+                if event.key == pygame.K_BACKSPACE: 
+    
+                    # get text input from 0 to -1 i.e. end. 
+                    user_text = user_text[:-1]
+
+                elif event.key == pygame.K_RETURN:
+                    if (meets_name_criteria(user_text)):
+                        name = user_text
+                        pushed = True
+    
+                # Unicode standard is used for string 
+                # formation 
+                else:
+                    if(len(user_text) < 16):
+                        user_text += event.unicode
+
+        pygame.draw.rect(screen, WHITE, input_rect)
+
+        text_surface = fonts[4].render(user_text, True, BLACK)
+        screen.blit(text_surface, (input_rect.x+5, input_rect.y+5))
+
+        pygame.display.flip()

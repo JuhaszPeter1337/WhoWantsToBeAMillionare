@@ -30,12 +30,6 @@ sudo apt install python3 -y
 sudo apt install python3-pip -y
 ```
 
-### Tkinter
-
-```
-sudo apt install python3-tk -y
-```
-
 ### pygame-ce
 
 ```
@@ -56,6 +50,9 @@ python3 main.py
 ### Game description scene
 
 ![Alt text](repo_images/description.png?raw=true "Description")
+### Input name
+
+![Alt text](repo_images/name.JPG?raw=true "Name")
 ### Starting screen
 
 ![Alt text](repo_images/start_screen.JPG?raw=true "Starting screen")
