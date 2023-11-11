@@ -41,5 +41,8 @@ def create_list(scores) -> None:
 
 def write_scores(file_path, scores) -> None:
     with open(file_path, 'w') as file:
-        for score in scores:
-            file.write(f"{score}\n")
+        for i in range(0, len(scores)):
+            if i < len(scores) - 1:
+                file.write(f"{scores[i]}\n")
+            else:
+                file.write(f"{scores[i]}")
