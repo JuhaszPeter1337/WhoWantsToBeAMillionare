@@ -264,6 +264,8 @@ def winner(screen, money) -> None:
     end_screen = Rectangular(600, 20, 580, 500, WHITE)
     end_screen.draw(screen)
 
+    threading.Thread(target=game_over_song, daemon=True).start()
+
     c = count_digits(money)
 
     create_text(screen, texts[0], (660, 50), 2)
