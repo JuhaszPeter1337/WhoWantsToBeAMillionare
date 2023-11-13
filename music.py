@@ -32,3 +32,6 @@ def game_over_song():
 
 def contestant_song():
     playsound('music\contestant.mp3')
+
+def description_song():
+    playsound('music\description.mp3')

@@ -152,6 +152,8 @@ def menu(screen) -> None:
 def description(screen) -> None:
     screen.blit(MAN, (0, 0))
 
+    threading.Thread(target=description_song, daemon=True).start()
+
     texts = [
         "The goal is to correctly answer 15 consecutive questions",
         "with each question having a higher prize value than the",
