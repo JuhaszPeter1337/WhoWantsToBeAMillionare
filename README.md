@@ -17,6 +17,8 @@ If you answer the question wrong, it's game over.
 
 The top 20 scores are stored in scoreboard.txt with names.
 
+The game contains a lot of different music.
+
 ## Prerequisites
 
 ### python3
