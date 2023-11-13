@@ -134,3 +134,8 @@ Light Year is related to...,energy,speed,distance,intensity,C
 When did Yuri Alekseyevich Gagarin reach space?,1960,1961,1962,1963,B
 In aviation what does UFO stand for?,Unified Flying Object,Unitary Flinging Obsession,United Flag Opposition,Unidentified Flying Object,D
 What are the three primary colors?,Red green blue,Magenta pink cyan,Yellow salmon brown,White black grey,A
+What is the study of the Earth's physical structure and processes called?,Geology,Meteorology,Biology,Chemistry,A
+What is the force that pulls objects toward the center of the Earth?,Magnetism,Gravity,Friction,Buoyancy,B
+What is the process by which water changes from a liquid to a gas?,Condensation,Vaporization,Sublimation,Evaporation,D
+What is the unit of measurement for electric current?,Ohm,Ampere,Volt,Watt,B
+Which subatomic particle carries a negative electric charge?,Proton,Neutron,Electron,Photon,C
