@@ -187,6 +187,8 @@ def start(screen) -> None:
 
     screen.blit(MAN, (0, 0))
 
+    threading.Thread(target=contestant_song, daemon=True).start()
+
     texts = [
         "Ladies and Gentlemen!",
         'Welcome to a new round of "Who wants to',
