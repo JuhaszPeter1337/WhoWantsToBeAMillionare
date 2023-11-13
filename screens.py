@@ -5,6 +5,8 @@ from constants import *
 import button
 from blur import blur
 from scoreboard import *
+import threading
+from music import *
 
 # Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
 
@@ -89,6 +91,9 @@ def popup(screen, image, text, money = None ):
             pygame.event.pump()
 
 def menu(screen) -> None:
+    main_song = threading.Thread(target=main_theme_song, daemon=True)
+    main_song.start()
+
     running = True
 
     global answer
@@ -220,6 +225,8 @@ def gameover(screen, money) -> None:
     end_screen = Rectangular(600, 20, 580, 500, WHITE)
     end_screen.draw(screen)
 
+    threading.Thread(target=game_over_song, daemon=True).start()
+
     create_text(screen, texts[0], (766, 50), 3)
     if money == 0:
         create_text(screen, texts[1], (660, 135), 2)
@@ -294,6 +301,8 @@ def audience_diagram(screen, numbers) -> None:
     ]
 
     font = fonts[6]
+
+    threading.Thread(target=pre_audience_song, daemon=True).start()
     
     for i in range(5000, 0, -1000):
         screen.blit(AUDIENCE, (0, 0))
@@ -312,6 +321,8 @@ def audience_diagram(screen, numbers) -> None:
         pygame.display.update()
         pygame.time.delay(1000)
         pygame.event.pump()
+
+    threading.Thread(target=audience_song, daemon=True).start()
 
     screen.blit(AUDIENCE, (0, 0))
 
@@ -353,6 +364,8 @@ def phone_text(screen, text, pos, last = False) -> None:
 def phone_screen(screen, text, correct_answer) -> None:
     screen.blit(PHONE, (0, 0))
     screen.blit(BUBBLE, (465,0))
+
+    threading.Thread(target=phone_song, daemon=True).start()
 
     phone_text(screen, text[0], (525, 80))
     phone_text(screen, text[1], (525, 115))

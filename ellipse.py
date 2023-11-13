@@ -6,6 +6,7 @@ from help import *
 from button import *
 from screens import *
 from typing import List
+from music import *
 
 audience, phone, fifty = True, True, True
 
@@ -53,6 +54,7 @@ class Ellipse(Shape):
 
                 pygame.draw.line(screen, RED, (779, 535), (879, 595), width=6)
                 pygame.draw.line(screen, RED, (879, 535), (779, 595), width=6)
+                threading.Thread(target=fifty_fifty_song, daemon=True).start()
                 pygame.display.update()
 
                 return [obj.option_A, obj.option_B, obj.option_C, obj.option_D]
