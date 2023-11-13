@@ -38,6 +38,12 @@ sudo apt install python3-pip -y
 pip3 install pygame-ce==2.2.0
 ```
 
+### playsound
+
+```
+pip3 install playsound==1.2.2
+```
+
 ## Start app
 
 ```
