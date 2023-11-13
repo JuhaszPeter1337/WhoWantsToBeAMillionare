@@ -139,3 +139,10 @@ What is the force that pulls objects toward the center of the Earth?,Magnetism,G
 What is the process by which water changes from a liquid to a gas?,Condensation,Vaporization,Sublimation,Evaporation,D
 What is the unit of measurement for electric current?,Ohm,Ampere,Volt,Watt,B
 Which subatomic particle carries a negative electric charge?,Proton,Neutron,Electron,Photon,C
+What does the acronym "URL" stand for in web addresses?,Universal Resource Locator,Uniform Resource Link,Universal Reference Language,Uniform Retrieval Link,A
+What is the main purpose of a firewall in a computer network?,To block unauthorized access,To increase internet speed,To optimize search engine results,To improve graphic design,A
+What does "ISP" stand for in the context of internet services?,Internet Security Protocol,Internet Service Provider,Internet Support Program,Internet Source Platform,B
+What does "IoT" stand for in the context of technology?,Internet of Things,Internet of Technology,Internet of Telecommunications,Internet of Trends,A
+What does "CPU" stand for in the context of computer hardware?,Central Processing Unit,Computer Programming Unit,Core Performance Unit,Central Printing Unit,A
+What is the primary function of an antivirus software?,To detect and remove malware,To optimize internet speed,To create digital art,To encrypt email messages,A
+What does "LAN" stand for in the context of networking?,Local Area Network,Large Area Network,Longitudinal Access Network,Local Access Node,A
