@@ -8,6 +8,8 @@ import ellipse
 from ellipse import *
 import button
 from screens import *
+from music import *
+import threading
 
 pygame.init()
 
@@ -95,6 +97,7 @@ def main():
 
         draw(objects)
         pygame.display.update()
+        threading.Thread(target=lets_play_song, daemon=True).start()
 
         answered = False
         while(not answered):
@@ -107,8 +110,10 @@ def main():
                         if type(obj) == button.Button and obj.pushed and obj.enabled:
                             obj.draw(screen, answered=True)
                             pygame.display.update()
-                            pygame.time.delay(3000)
-                            pygame.event.pump()
+                            threading.Thread(target=answered_song, daemon=True).start()
+                            for _ in range(0, 5000, 1000):
+                                pygame.time.delay(1000)
+                                pygame.event.pump()
                         if type(obj) == ellipse.Ellipse:
                             if obj.type == "fifty":
                                 q = obj.update(screen, quiz[rnd])
@@ -138,7 +143,8 @@ def main():
                                     obj.correct()
                                     obj.draw(screen, answered=True, correct=True)
                                     pygame.display.update()
-                                    for _ in range(0, 3000, 1000):
+                                    threading.Thread(target=correct_song, daemon=True).start()
+                                    for _ in range(0, 5000, 1000):
                                         pygame.time.delay(1000)
                                         pygame.event.pump()
                                     if question_counter < 15 and correct_answers < 14:
@@ -151,12 +157,13 @@ def main():
                                         winner(screen, money[-1])
                                 else:
                                     obj.incorrect()
+                                    threading.Thread(target=incorrect_song, daemon=True).start()
                                     obj.draw(screen, answered=True, incorrect=True)
                                     number = find_correct_answer(quiz[rnd].correct_answer)
                                     objects[number].outline = ORANGE
                                     objects[number].draw(screen, answered=True, incorrect=False)
                                     pygame.display.update()
-                                    for _ in range(0, 5000, 1000):
+                                    for _ in range(0, 6000, 1000):
                                         pygame.time.delay(1000)
                                         pygame.event.pump()
                                     calculated_money = money_calc(my_money)

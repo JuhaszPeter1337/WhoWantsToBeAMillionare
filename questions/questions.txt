@@ -125,3 +125,12 @@ What is Aurora Borealis commonly known as?,Fairy Dust,Northern Lights,Book of ag
 When is the International Workers' Day?,15th April,12th December,1st May,1st August,C
 What does the "F" stand for in FBI?,Foreign,Federal,Flappy,Face,B
 What was the first university in the United States?,Harvard,University of Washington,Yale,Oxford,A
+In which country is the Taj Mahal located?,India,Pakistan,Bangladesh,Nepal,A
+What is the capital of South Korea?,Tokyo,Beijing,Hanoi,Seoul,D
+What sort of animal is Walt Disney's Dumbo?,Deer,Rabbit,Elephant,Donkey,C
+What is the founder of Apple?,Sundar Pichai,Tim Cook,Bill Gates,Steve Jobs,D
+How many alphabets are there in English Language?,30,27,26,25,C
+Light Year is related to...,energy,speed,distance,intensity,C
+When did Yuri Alekseyevich Gagarin reach space?,1960,1961,1962,1963,B
+In aviation what does UFO stand for?,Unified Flying Object,Unitary Flinging Obsession,United Flag Opposition,Unidentified Flying Object,D
+What are the three primary colors?,Red green blue,Magenta pink cyan,Yellow salmon brown,White black grey,A
