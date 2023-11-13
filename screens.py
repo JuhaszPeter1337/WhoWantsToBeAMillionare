@@ -14,6 +14,8 @@ pygame.font.init()
 
 name = None
 
+displayed = True
+
 answer = None
 
 fonts = [
@@ -91,14 +93,20 @@ def popup(screen, image, text, money = None ):
             pygame.event.pump()
 
 def menu(screen) -> None:
-    main_song = threading.Thread(target=main_theme_song, daemon=True)
-    main_song.start()
-
-    running = True
-
-    global answer
+    global displayed, answer
 
     screen.blit(BACKGROUND, (0, 0))
+    pygame.display.update()
+
+    if displayed:
+        main_song = threading.Thread(target=main_theme_song, daemon=True)
+        main_song.start()
+        displayed = False
+        for _ in range(0, 18000, 1000):
+            pygame.time.delay(1000)
+            pygame.event.pump()
+
+    running = True
 
     while running:
         objects = [
