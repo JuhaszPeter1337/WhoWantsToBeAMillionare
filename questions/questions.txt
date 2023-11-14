@@ -189,3 +189,12 @@ Who directed the film "Eternal Sunshine of the Spotless Mind"?,Spike Jonze,Charl
 What is the name of the fictional city where Batman operates?,Metropolis,Star City,Central City,Gotham City,D
 Who directed the film "The Godfather"?,Francis Ford Coppola,Quentin Tarantino,Martin Scorsese,Steven Spielberg,A
 In "Game of Thrones" who is known as the "Mother of Dragons"?,Cersei Lannister,Sansa Stark,Daenerys Targaryen,Arya Stark,C
+In which sport would you perform a triple axel?,Figure skating,Gymnastics,Ski jumping,Ice hockey,A
+Who won the FIFA World Cup in 2018?,Croatia,Brazil,Germany,France,D
+In which country did the sport of judo originate?,China,Korea,Japan,Thailand,C
+Who is known as "The Greatest" in the sport of boxing?,Muhammad Ali,Joe Frazier,George Foreman,Mike Tyson,A
+What ancient wonder of the world was located in Alexandria?,Great Pyramid of Giza,Mausoleum at Halicarnassus,Lighthouse of Alexandria,Colossus of Rhodes,C
+Which pharaoh is often referred to as the "Boy King"?,Tutankhamun,Ramses II,Amenhotep III,Hatshepsut,A
+In which ancient Greek city did the Olympic Games originate?,Sparta,Olympia,Athens,Delphi,B
+In ancient Greek mythology who is the god of war?,Ares,Artemis,Apollo,Athena,A
+What is the term for the fortified hilltop in an ancient Greek city-state?,Agora,Gymnasium,Acropolis,Stoa,C
