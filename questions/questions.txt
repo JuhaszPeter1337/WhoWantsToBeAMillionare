@@ -173,3 +173,19 @@ What is the value of 3^4 (3 raised to the power of 4)?,27,64,12,81,D
 If a = 3 and b = 4 what is the value of a^2 + b^2?,25,12,16,9,A
 What is the sum of the first 10 positive integers?,45,55,50,60,B
 What is the value of 2/3 as a decimal?,0.6667,0.3333,0.5,0.75,A
+Who played the lead role in the movie "Forrest Gump"?,Brad Pitt,Leonardo DiCaprio,Tom Hanks,Matt Damon,C
+Who directed the movie "Inception"?,Quentin Tarantino,Steven Spielberg,Christopher Nolan,Martin Scorsese,C
+In the TV series "Breaking Bad" what is Walter White's alias?,Heisenberg,Gus Fring,Jesse Pinkman,Saul Goodman,A
+Which actor played the character Jack Dawson in the movie "Titanic"?,Brad Pitt,Leonardo DiCaprio,Johnny Depp,Tom Cruise,B
+Who played the role of Tony Stark in the Marvel Cinematic Universe?,Robert Downey Jr.,Chris Evans,Chris Hemsworth,Mark Ruffalo,A
+In "Stranger Things" what is the name of the parallel dimension?,The Other Side,The Dark Zone,The Shadow Realm,The Upside Down,D
+Which film features a character named Hannibal Lecter?,The Silence of the Lambs,Se7en,American Psycho,Saw,A
+What is the name of the wizard school in the "Harry Potter" series?,Beauxbatons,Durmstrang,Hogwarts,Ilvermorny,C
+In "Game of Thrones" what is the name of Jon Snow's direwolf?,Nymeria,Ghost,Grey Wind,Summer,B
+Which film features a character named Tyler Durden?,Fight Club,American History X,The Usual Suspects,The Shawshank Redemption,A
+What is the name of the fictional spy created by Ian Fleming?,Ethan Hunt,James Bond,Jason Bourne,Sherlock Holmes,B
+Which film features a character named Jules Winnfield?,Pulp Fiction,Reservoir Dogs,The Shawshank Redemption,The Godfather,A
+Who directed the film "Eternal Sunshine of the Spotless Mind"?,Spike Jonze,Charlie Kaufman,Christopher Nolan,Michel Gondry,D
+What is the name of the fictional city where Batman operates?,Metropolis,Star City,Central City,Gotham City,D
+Who directed the film "The Godfather"?,Francis Ford Coppola,Quentin Tarantino,Martin Scorsese,Steven Spielberg,A
+In "Game of Thrones" who is known as the "Mother of Dragons"?,Cersei Lannister,Sansa Stark,Daenerys Targaryen,Arya Stark,C
