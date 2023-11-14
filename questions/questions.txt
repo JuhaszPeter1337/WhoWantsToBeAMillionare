@@ -146,3 +146,30 @@ What does "IoT" stand for in the context of technology?,Internet of Things,Inter
 What does "CPU" stand for in the context of computer hardware?,Central Processing Unit,Computer Programming Unit,Core Performance Unit,Central Printing Unit,A
 What is the primary function of an antivirus software?,To detect and remove malware,To optimize internet speed,To create digital art,To encrypt email messages,A
 What does "LAN" stand for in the context of networking?,Local Area Network,Large Area Network,Longitudinal Access Network,Local Access Node,A
+Who was the first President of the United States?,Thomas Jefferson,John Adams,James Madison,George Washington,D
+What event marked the start of World War I?,Bombing of Pearl Harbor,Assassination of Franz Ferdinand,D-Day Invasion,Battle of Gettysburg,B
+Who was the leader of Nazi Germany during World War II?,Joseph Stalin,Benito Mussolini,Adolf Hitler,Winston Churchill,C
+What ancient civilization built the Great Pyramids of Giza?,Egyptians,Greeks,Romans,Persians,A
+Who was the leader of the Soviet Union during much of the Cold War?,Joseph Stalin,Nikita Khrushchev,Mikhail Gorbachev,Leonid Brezhnev,A
+Who wrote the Communist Manifesto with Karl Marx?,Vladimir Lenin,Joseph Stalin,Mao Zedong,Friedrich Engels,D
+Who gave the famous "I Have a Dream" speech?,Malcolm X,Martin Luther King,Rosa Parks,John Lewis,B
+Who was the leader of the Allied forces in Europe during World War II?,Dwight D. Eisenhower,George S. Patton,Bernard Montgomery,Omar Bradley,A
+Who was the founder of the Mongol Empire?,Genghis Khan,Alexander the Great,Attila the Hun,Julius Caesar,A
+What ancient civilization built the city of Machu Picchu?,Incas,Aztecs,Mayas,Olmecs,A
+What ancient civilization built the city of Troy as depicted in Iliad?,Trojans,Greeks,Romans,Egyptians,A
+What is the fundamental unit of electric charge?,Ohm,Volt,Coulomb,Ampere,C
+What is the SI unit of force?,Kilogram,Newton,Einstein,Second,B
+What is the speed of light in a vacuum?,299.792 kilometers per second,399.792 kilometers per second,3 x 10^8 meters per second,299.792 kilometers per hour,A
+What is the SI unit of energy?,Watt,Newton,Pascal,Joule,D
+What is the SI unit of frequency?,Hertz,Newton,Ohm,Second,A
+What is the process by which a substance changes from a gas to a liquid?,Vaporization,Condensation,Sublimation,Melting,B
+What is the value of Pi to two decimal places?,3.16,3.18,3.14,3.12,C
+In geometry, what is the term for a polygon with eight sides?,Octagon,Hexagon,Decagon,Pentagon,A
+What is the square root of 196?,12,14,13,15,B
+What is the value of 5! (5 factorial)?,120,60,24,720,A
+Solve for x: 2x + 5 = 15.,x = 10,x = 7.5,x = 8.5,x = 5,D
+What is the sum of the angles in a triangle?,180 degrees,90 degrees,360 degrees,120 degrees,A
+What is the value of 3^4 (3 raised to the power of 4)?,27,64,12,81,D
+If a = 3 and b = 4 what is the value of a^2 + b^2?,25,12,16,9,A
+What is the sum of the first 10 positive integers?,45,55,50,60,B
+What is the value of 2/3 as a decimal?,0.6667,0.3333,0.5,0.75,A
