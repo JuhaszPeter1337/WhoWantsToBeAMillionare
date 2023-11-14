@@ -291,7 +291,7 @@ def winner(screen, money) -> None:
     top = add_score(scores, name, money)
     write_scores(scoreboard, top)
 
-    pygame.time.delay(2000)
+    pygame.time.delay(4000)
     pygame.event.pump()
 
     pygame.quit()
