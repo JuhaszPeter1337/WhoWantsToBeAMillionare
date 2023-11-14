@@ -198,3 +198,15 @@ Which pharaoh is often referred to as the "Boy King"?,Tutankhamun,Ramses II,Amen
 In which ancient Greek city did the Olympic Games originate?,Sparta,Olympia,Athens,Delphi,B
 In ancient Greek mythology who is the god of war?,Ares,Artemis,Apollo,Athena,A
 What is the term for the fortified hilltop in an ancient Greek city-state?,Agora,Gymnasium,Acropolis,Stoa,C
+Who is the Greek god of the sea and earthquakes?,Poseidon,Apollo,Hades,Hermes,A
+What is the name of the Greek hero who slew the Gorgon Medusa?,Theseus,Heracles,Achilles,Perseus,D
+Who is the Roman god of war equivalent to the Greek god Ares?,Jupiter,Neptune,Mars,Pluto,C
+In Greek mythology who is the Titan who stole fire from the gods?,Epimetheus,Prometheus,Atlas,Cronus,B
+Who is the Egyptian goddess of love beauty and fertility?,Hathor,Isis,Sekhmet,Nephthys,A
+Who is known as the "King of Pop" and was a legendary pop singer?,Elvis Presley,Michael Jackson,Prince,Madonna,B
+Who is the lead singer of the band Coldplay?,Chris Martin,Bono,Adam Levine,Ed Sheeran,A
+Who is known as the "Queen of Pop" and has hits like "Like a Virgin"?,Beyonce,Rihanna,Madonna,Taylor Swift,C
+Who is the lead singer of the band Linkin Park?,Mike Shinoda,Chester Bennington,Brad Delson,Joe Hahn,B
+What is the name of the pigment that gives human skin its color?,Hemoglobin,Melanin,Chlorophyll,Carotene,B
+Which chromosome determines the biological sex of an individual?,X chromosome,Y chromosome,Z chromosome,W chromosome,B
+In the human body where is insulin produced?,Liver,Pancreas,Kidneys,Stomach,B
