@@ -255,7 +255,7 @@ def gameover(screen, money) -> None:
     create_list(top)
     write_scores(scoreboard, top)
 
-    pygame.time.delay(2000)
+    pygame.time.delay(4000)
     pygame.event.pump()
 
     pygame.quit()
