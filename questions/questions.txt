@@ -210,3 +210,13 @@ Who is the lead singer of the band Linkin Park?,Mike Shinoda,Chester Bennington,
 What is the name of the pigment that gives human skin its color?,Hemoglobin,Melanin,Chlorophyll,Carotene,B
 Which chromosome determines the biological sex of an individual?,X chromosome,Y chromosome,Z chromosome,W chromosome,B
 In the human body where is insulin produced?,Liver,Pancreas,Kidneys,Stomach,B
+In which country is the ancient city of Petra located?,Egypt,Jordan,Lebanon,Iraq,B
+In which country is Mount Everest the world's highest peak?,India,Nepal,China,Bhutan,B
+How many players are on the field for a standard baseball team?,7,8,9,10,C
+How many players are on the ice for a full-strength ice hockey team?,4,5,6,7,B
+How many rounds are there in a professional boxing match?,8,10,12,15,C
+In soccer how long is the halftime break in a standard match?,10 minutes,15 minutes,20 minutes,25 minutes,B
+In tennis how many sets are played for men at Grand Slam tournaments?,2,3,4,5,B
+In which year did the Berlin Wall fall?,1991,1985,1989,1993,C
+Who was the first Emperor of Rome?,Julius Caesar,Nero,Augustus,Constantine,C
+Who was the leader of the Civil Rights Movement in the United States?,Rosa Parks,Malcolm X,Martin Luther King Jr.,Harriet Tubman,C
