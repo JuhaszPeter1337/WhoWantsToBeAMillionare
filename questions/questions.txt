@@ -220,3 +220,7 @@ In tennis how many sets are played for men at Grand Slam tournaments?,2,3,4,5,B
 In which year did the Berlin Wall fall?,1991,1985,1989,1993,C
 Who was the first Emperor of Rome?,Julius Caesar,Nero,Augustus,Constantine,C
 Who was the leader of the Civil Rights Movement in the United States?,Rosa Parks,Malcolm X,Martin Luther King Jr.,Harriet Tubman,C
+What does the term "RAM" stand for in computing?,Random Access Memory,Read-Only Memory,Rapid Application Management,Real-time Algorithmic Module,A
+What is the purpose of a DNS server?,Encrypt internet traffic,Manage email communications,Store website content,Domain name - IP translation,D
+Which programming language is commonly used for data analysis?,R,Python,Java,C++,B
+Which web browser is developed by Mozilla?,Firefox,Chrome,Safari,Edge,A
