@@ -114,6 +114,7 @@ def main():
                             for _ in range(0, 5000, 1000):
                                 pygame.time.delay(1000)
                                 pygame.event.pump()
+                            break
                         if type(obj) == ellipse.Ellipse:
                             if obj.type == "fifty":
                                 q = obj.update(screen, quiz[rnd])
