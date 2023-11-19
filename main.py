@@ -155,6 +155,7 @@ def main():
                                         quiz.pop(rnd)
                                         answered = True
                                     else:
+                                        quiz.pop(rnd)
                                         winner(screen, money[-1])
                                 else:
                                     obj.incorrect()
