@@ -79,6 +79,7 @@ def main():
     correct_answers = 0
 
     while running:
+        pygame.event.clear()
         length = len(quiz)
         rnd = random.randint(0, length-1)
 
