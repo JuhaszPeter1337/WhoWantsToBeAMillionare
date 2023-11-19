@@ -7,6 +7,7 @@ from blur import blur
 from scoreboard import *
 import threading
 from music import *
+from file import *
 
 # Pygame has no opportunity to handle the messages it gets from your operation system. To avoid that, you should call pygame.event.pump()
 
@@ -258,6 +259,8 @@ def gameover(screen, money) -> None:
     pygame.time.delay(4000)
     pygame.event.pump()
 
+    write_to_file()
+
     pygame.quit()
     sys.exit()
 
@@ -293,6 +296,8 @@ def winner(screen, money) -> None:
 
     pygame.time.delay(4000)
     pygame.event.pump()
+
+    write_to_file()
 
     pygame.quit()
     sys.exit()

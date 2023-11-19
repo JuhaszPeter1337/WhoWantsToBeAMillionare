@@ -167,6 +167,7 @@ def main():
                                     for _ in range(0, 6000, 1000):
                                         pygame.time.delay(1000)
                                         pygame.event.pump()
+                                    quiz.pop(rnd)
                                     calculated_money = money_calc(my_money)
                                     gameover(screen, calculated_money)
 
