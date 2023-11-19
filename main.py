@@ -175,6 +175,7 @@ def main():
                     draw(objects)
 
             pygame.event.pump()
+        pygame.event.clear()
 
 if __name__ == "__main__":
     read_from_file()
